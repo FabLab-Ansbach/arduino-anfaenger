@@ -386,14 +386,13 @@ Morse Alphabet:
 
 - Lauflicht soll schneller und langsamer werden
 - Beginnt bei 200ms
-- Endet bei 5s
+- Endet bei 5sWas ist ein Arduino und was kann ich damit machen?
 
 ---
 layout: full
 ---
 
 # Zusammenfassung
-
 
 <StickyNote color="amber-light" width="220px" title="Arduino" v-drag="[120, 120, 220, 130]" style="transform: rotate(-3deg)">
   

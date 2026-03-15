@@ -89,7 +89,7 @@
 ## Zusatzaufgabe - Automatischer Blinker
 
 - Lauflicht soll automatisch schneller und wieder langsamer werden
-- Beginn bei 200ms und Ende bei z.B. 5ms
+- Beginn bei 200ms und Ende bei z.B. 5s
 
 ## Ausblick
 
