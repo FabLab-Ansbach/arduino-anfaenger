@@ -35,6 +35,7 @@ layout: image-left
 image: ./img/Arduino_Uno.webp
 backgroundSize: 30em
 ---
+
 # Was ist ein Arduino?
 
 <Arrow v-click="[2,3]" x1="550" y1="145" x2="350" y2="340" color="red" width=5 />
@@ -333,4 +334,93 @@ layout: statement
 
 # Programm umbauen <br> - <br> Variablen verwenden
 
-Alle festen Zahlen durch Variablen ersetze
+Alle festen Zahlen durch Variablen ersetzen
+
+---
+layout: two-cols-header
+---
+
+# Erweiterungen
+
+::left::
+
+### Eigenes Blinkmuster
+
+- Lasst eure LEDs in einem eigenen Muster blinken
+
+::right::
+
+### Name in Morse-Code
+
+Morse Alphabet:
+<QRCode
+    :width="200"
+    :height="200"
+    type="svg"
+    data="https://de.wikipedia.org/wiki/Morsecode#/media/Datei:International_Morse_Code.svg"
+    :margin="10"
+    :imageOptions="{ margin: 10 }"
+    :dotsOptions="{ type: 'extra-rounded', color: 'green' }"
+/>
+
+
+<style>
+.two-cols-header {
+  column-gap: 20px; /* Adjust the gap size as needed */
+}
+</style>
+
+---
+---
+
+# Challenge - Lauflicht mit mehreren LEDs
+
+- Zusätzliche LEDs einbauen
+- Jede LED braucht einen passenden Vorwiderstand
+- LEDs sollen nacheinander ein gehen und dann wieder aus
+
+---
+---
+
+# Zusatzaufgabe - Automatischer Blinker
+
+- Lauflicht soll schneller und langsamer werden
+- Beginnt bei 200ms
+- Endet bei 5s
+
+---
+layout: full
+---
+
+# Zusammenfassung
+
+
+<StickyNote color="amber-light" width="220px" title="Arduino" v-drag="[120, 120, 220, 130]" style="transform: rotate(-3deg)">
+  
+  - Mikrocontroller mit Ein- und Ausgängen
+  - Frei programmierbar
+</StickyNote>
+
+<StickyNote color="pink-light" width="240px" title="LEDs" v-drag="[360, 100, 240, 130]" style="transform: rotate(2deg)">
+
+  - LEDs haben einen Plus-Pol (Anode) und einen Minus-Pol (Kathode)
+  - LEDs brauchen Vorwiderstände!
+</StickyNote>
+
+<StickyNote color="teal-light" width="280px" title="Serieller Monitor" v-drag="[620, 140, 280, 130]" style="transform: rotate(-5deg)">
+
+  - Starten mit `Serial.begin(9600);`
+  - Text ausgeben mit `Serial.println("Hallo Welt");`
+</StickyNote>
+
+<StickyNote color="green-light" width="240px" title="Aufbau Arduino Programm" v-drag="[200, 320, 240, 130]" style="transform: rotate(4deg)">
+
+  - `setup()` wird nur 1-mal aufgerufen
+  - `loop()` läuft in Dauerschleife
+</StickyNote>
+
+<StickyNote color="sky-light" width="240px" title="Variablen" v-drag="[500, 340, 240, 130]" style="transform: rotate(-2deg)">
+
+  - Werte können wir in Variablen speichern
+  - Es gibt unterschiedliche Typen
+</StickyNote>
