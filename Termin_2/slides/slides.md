@@ -298,12 +298,11 @@ layout: two-cols-header
 ### Aufbau
 
 - Rote, gelbe und grüne LED
+  - Rot => Pin 13
+  - Gelb => Pin 12
+  - Grün => Pin 11
 - Jede LED mit passendem Vorwiderstand
 - Zeiten wie bei echter Ampel
-
-<br>
-
-- Zusatzaufgabe: Taster für Fußgängerampel
 
 ::right::
 
@@ -315,6 +314,40 @@ layout: two-cols-header
 | Achtung | Rot + Gelb | 1000ms |
 | Fahrt | Grün | 3000ms |
 | Bremsen | Gelb | 1000ms |
+
+<style>
+.two-cols-header {
+  column-gap: 20px;
+}
+</style>
+
+---
+layout: two-cols-header
+---
+
+# Zusatzaufgabe - Fußgängerampel
+
+::left::
+
+### Aufbau
+
+- Zusätzlich rote und grüne LED für Fußgänger
+  - Rot => Pin 10
+  - Grün => Pin 9
+- Taster für Fußgänger
+  - Pin 8
+
+::right::
+
+### Ablauf
+
+Zusätzlich zur normalen Ampel:
+
+- Wenn der Taster gedrückt wurde läuft die Ampel normal weiter, bis das nächste mal rot kommt
+- Beide Ampeln müssen für 500ms rot sein
+- Fußgängerampel für 3000ms grün
+- Beide Ampeln für 500ms rot
+- Auto-Ampel läuft bei gelb weiter
 
 <style>
 .two-cols-header {
