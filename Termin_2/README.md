@@ -64,30 +64,7 @@
 
 **Hinweis:** Braucht eine Boolean-Variable als Zustandsspeicher und evtl. Entprellung
 
-## Erweiterung 2 - Ampelschaltung mit Taster
-
-- Ampelschaltung mit Rot, Gelb und Grüner LED
-- Unterschiedliche Zeiten wie bei echter Ampel
-- Zeiten in Variablen eingestellt
-
-## Challenge - Reaktionsspiel mit LED und Taster
-
-**Ziel:** Die LED leuchtet nach einer zufälligen Wartezeit auf. Spieler*in drückt so schnell wie möglich den Taster. Die Reaktionszeit wird über drei LEDs angezeigt (grün = schnell, gelb = mittel, rot = langsam).
-
-**Wichtig:** Es wird **kein** `millis()` gebraucht! Die Zeitspanne wird durch aufeinanderfolgende `delay()`-Aufrufe gemessen.
-
-**Vereinfachte Logik:**
-
-- LED leuchtet auf
-- Warte in 50ms-Schritten und zähle mit, bis Taster gedrückt wird
-- Je nach Anzahl Schritte: grüne, gelbe oder rote LED leuchten lassen
-- Zusätzlicher Taster zum Neustarten
-
-**Hinweis:** Wenn der Taster nach weniger als 500ms (ca. 10 Schritte) gedrückt wird → grüne LED, 500-1000ms → gelbe LED, über 1000ms → rote LED
-
-## Zusatzaufgabe - Entprellter Taster
-
-**Für sehr schnelle Teilnehmer*innen.**
+## Erweiterung 2 - Entprellter Taster
 
 Wer die Toggle-Funktion gebaut hat, hat vermutlich bemerkt: Manchmal schaltet die LED zweimal. Das ist das **Prellen** des Tasters.
 
@@ -98,3 +75,25 @@ Wer die Toggle-Funktion gebaut hat, hat vermutlich bemerkt: Manchmal schaltet di
 - Nur dann gilt es als echter Tastendruck
 
 **Cliffhanger:** "Was wäre, wenn du `delay(50)` nicht verwenden kannst, weil der Arduino in dieser Zeit noch andere Dinge tun muss? Das lösen wir im Fortgeschrittenenkurs."
+
+## Zusatzaufgabe - Ampelschaltung mit Taster
+
+**Für sehr schnelle Teilnehmer*innen.**
+
+- Ampelschaltung mit Rot, Gelb und Grüner LED
+- Unterschiedliche Zeiten wie bei echter Ampel
+- Zeiten in Variablen eingestellt
+
+## Challenge - Türklingel mit Bestätigung
+
+**Ziel:** Wir simulieren eine Türklingel mit Tastern und LEDs
+
+- Wird der erste Taster (Klingel) gedrückt, blinkt eine rote LED langsam
+- Wird der zweite Taster (Türöffner) gedrückt, geht die rote LED aus und eine grüne LED blinkt kurz
+- Wird der zweite Taster innerhalb von 5 Sekunden nicht gedrückt blinkt die rote LED schneller
+
+**Hinweise:**
+
+- Wir brauchen Zustandsvariablen (lernen wir eigentlich erst im Fortgeschrittenenkurs; Hier bewusst als Challenge mit drin zum Knobeln)
+- Zeitmessung einfach mit Zähler => Solange gewartet werden soll alle delays im Programm zum Zähler dazu addieren
+- Umschaltung des Blinktakts über Bedingung
