@@ -6,8 +6,6 @@
 
 **Referenz:** Kapitel 2.1.1 (Der Mikrocontroller), Kapitel 2.1.2 (Das Breadboard), Kapitel 2.1.3 (LEDs)
 
-- Anmeldung mit Benutzername und Passwort erklären
-
 - Was ist ein Mikrocontroller? Was ist ein Arduino?
   - **Referenz:** Abbildung aus Heft Seite 12 (UNO, NANO, MEGA mit Beschriftung)
 - Überblick zum Arduino
@@ -36,12 +34,14 @@
 - Überblick über die Projektstruktur vom PlatformIO
   - platformio.ini
   - src Verzeichnis => main.cpp
-- Erklärung setup() und loop()
-  - **Referenz:** Kapitel 4.1, Seite 24-25
 - Grundlegende Dinge erklären
   - Befehle werden immer mit Strichpunkt beendet
   - Befehel haben Argumente in runden Klammern
   - Bei Schleifen, Bedingungen, Funktionen etc. brauchen wir geschweifte Klammern und keinen Strichpunkt
+- Erklärung setup() und loop()
+  - **Referenz:** Kapitel 4.1, Seite 24-25
+
+- Anmeldung mit Benutzername und Passwort erklären
 
 ## Pflichtprojekt
 
