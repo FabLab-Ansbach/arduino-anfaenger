@@ -24,6 +24,7 @@
   - PWM = sehr schnelles An- und Ausschalten
   - Nur an Pins mit `~` Symbol (3, 5, 6, 9, 10, 11 beim UNO)
   - `analogWrite(pin, wert)` – Wert zwischen 0 und 255
+  - Aufbau am Oszi zeigen
 - map()-Funktion erklären
   - Problem: `analogRead()` liefert 0-1023, `analogWrite()` braucht 0-255
   - `map(wert, vonMin, vonMax, zuMin, zuMax)`
@@ -43,27 +44,27 @@
 
 **Schaltung:**
 
-- Potentiometer: Linker Pin → 5V, Rechter Pin → GND, Mittlerer Pin → A0
+- Potentiometer: Linker Pin → GND, Rechter Pin → +5V, Mittlerer Pin → A0
 - LED + 220Ω an Pin 9 (PWM!) und GND
 
 **Code-Gerüst mit TODO:**
 
 ```cpp
-int potiPin = A0;
-int ledPin = 9;
+int POTI_PIN = A0;
+int LED_PIN = 9;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(9600);L, hel
 }
 
 void loop() {
-  int sensorwert = analogRead(potiPin);
+  int sensorwert = analogRead(POTI_PIN);
   
   // TODO: map() verwenden um 0-1023 auf 0-255 umzurechnen
   int helligkeit = // ...
   
-  analogWrite(ledPin, helligkeit);
+  analogWrite(LED_PIN, helligkeit);
   
   Serial.print("Sensor: ");
   Serial.print(sensorwert);
