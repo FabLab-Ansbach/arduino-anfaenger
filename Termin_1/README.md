@@ -2,6 +2,17 @@
 
 **Kapitel im Heft:** Kapitel 2 (Hardware und Software), Kapitel 4.1 (Eine blinkende LED)
 
+## Vorstellungsrunde
+
+- Wir stellen uns vor
+  - Wer sind wir
+  - Was ist das FabLab
+  - Wo sind wir hier => AnsWerk
+
+- Teilnehmer stellen sich vor
+  - Namen
+  - Was wünsche ich mir vom Kurs?
+
 ## Theorie
 
 **Referenz:** Kapitel 2.1.1 (Der Mikrocontroller), Kapitel 2.1.2 (Das Breadboard), Kapitel 2.1.3 (LEDs)
