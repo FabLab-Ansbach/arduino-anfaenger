@@ -8,6 +8,7 @@
   - `pinmode` statt `pinMode` (Groß-/Kleinschreibung)
   - Fehlende Klammer `}`
   - `digitalwrite` statt `digitalWrite`
+  - Fehlernder Strichpunkt
 
 ## Theorie
 
