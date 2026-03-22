@@ -19,9 +19,9 @@ layout: cover
 ---
 ---
 
-# Rückblick - Was haben wir letzte Mal gemacht?
+# Rückblick - Was haben wir letztes Mal gemacht?
 
-Was stimmt hier nicht?
+Was stimmt hier nicht? 
 
 ```cpp {all|2|5|6|all}
 void setup() {
@@ -34,10 +34,6 @@ void loop() {
   delay(1000);
 }
 ```
-.slidev-heading {
-  padding: 1.5rem 2rem;
-  box-sizing: border-box;
-}
 
 ---
 ---
@@ -128,12 +124,18 @@ background-size: 20em
 - Widerstand R2 ist im Arduino eingebaut
 - Taster zwischen GND und Pin anschließen
 
+> Pull-Up aktivieren: `pinMode(13, INPUT_PULLUP);`
+> Eingang abfragen: `digitalRead(13);`
+
 </v-clicks>
 
 ---
 ---
 
 # Bedingungen mit if / else
+
+ve bele
+````md magic-move {at: 1}
 
 ```cpp
 if (Bedingung) {
@@ -143,7 +145,32 @@ if (Bedingung) {
 }
 ```
 
-<v-click>
+```cpp
+if (Bedingung) {
+  // Wird ausgeführt, wenn Bedingung WAHR ist
+} else {
+  // Wird ausgeführt, wenn Bedingung FALSCH ist
+}
+
+if (helligkeit > 500) {
+  digitalWrite(LED_PIN, HIGH);
+} else {
+  digitalWrite(LED_PIN, LOW);
+}
+
+```
+
+```cpp
+if (Bedingung) {
+  // Wird ausgeführt, wenn Bedingung WAHR ist
+} else {
+  // Wird ausgeführt, wenn Bedingung FALSCH ist
+}
+```
+
+````
+
+<v-click at="3">
 
 Vergleichsoperatoren:
 
@@ -174,6 +201,12 @@ if (x = 5) {   // FALSCH! Das ist eine Zuweisung, kein Vergleich!
 ```
 
 ---
+layout: statement
+---
+
+# Noch Fragen?
+
+---
 layout: image-left
 image: ./img/led_taster.png
 background-size: 30em
@@ -200,7 +233,7 @@ background-size: 30em
 const int PIN_TASTER = 2;
 const int PIN_LED = 9;
 
-void setup() {r unseren Drucker stellen wir hier zur Ver
+void setup() {
   pinMode(PIN_TASTER, INPUT_PULLUP);
   pinMode(PIN_LED, OUTPUT);
   Serial.begin(9600);
@@ -230,7 +263,7 @@ layout: statement
 
 **Ziel:** Bei jedem Tastendruck wechselt die LED ihren Zustand (an → aus → an → aus)
 
-**Tipp:** Ihr solltet den Zustand der LED speichern
+**Tipp:** Du solltest den Zustand der LED speichern
 
 ---
 ---
@@ -283,7 +316,7 @@ if (digitalRead(PIN_TASTER) == LOW) {
 
 <br>
 
-> Was wäre, wenn du `delay(100)` nicht verwenden kannst, weil der Arduino in dieser Zeit noch andere Dinge tun muss? Das lösen wir im Fortgeschrittenenkurs.itten und zähle mit,
+> Was wäre, wenn du `delay(100)` nicht verwenden kannst, weil der Arduino in dieser Zeit noch andere Dinge tun muss? Das lösen wir im Fortgeschrittenenkurs!
 
 </v-click>
 
@@ -363,7 +396,7 @@ Zusätzlich zur normalen Ampel:
 
 <br>
 
-**Ziel:** Wir simulieren eine Türklingel mit Türöffner
+**Ziel:** Du simulierst eine Türklingel mit Türöffner
 
 - Wird Taster 1 (Klingel) gedrückt, blinkt eine rote LED langsam
 - Wird Taster 2 (Türöffner) gedrückt, geht die rote LED aus und eine grüne LED blinkt kurz
