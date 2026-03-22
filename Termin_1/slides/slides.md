@@ -87,8 +87,8 @@ background-size: 15em
 ## (Heft S. 13)
 
 - Haben eine feste Polarität!
-- + (Anode) = längeres Beinchen
-- - (Kathode) = kürzeres Beinchen oder beim "Kelch"
+- \+ (Anode) = längeres Beinchen
+- \- (Kathode) = kürzeres Beinchen oder beim "Kelch"
 - Merkhilfe: Mit dem längeren Beinchen kann ich leichter ein + machen als mit dem kürzeren
 
 ---
@@ -117,6 +117,7 @@ layout: default
 
 - Benutzername: **user** | Passwort: **fablab**
 - Keine persönlichen Daten speichern
+  - Keine Informationen über euch z.B. Namen, Alter, Adresse
 
 ---
 
@@ -180,11 +181,11 @@ layout: two-cols-header
 
 # Grundlagen Programmierung
 
+````md magic-move {at: 1}
 ```cpp
 // Befehle werden mit Strichpunkt beendet!
-Befehl();
-
 // Befehle können in runten Klammern Argumente haben
+Befehl();
 Befehl(Argument1);
 Befehl(Argument1, Argument2);
 
@@ -203,6 +204,180 @@ while(Bedingung) {
   // Solange ausführen, wie Bedingung wahr ist
 }
 ```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+delay(1000);
+pinMode(13, OUTPUT);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+if(x > 10) {
+  digitalWrite(13, HIGH);
+} else {
+  digitalWrite(13, LOW);
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+```
+```cpp
+// Befehle werden mit Strichpunkt beendet!
+// Befehle können in runten Klammern Argumente haben
+Befehl();
+Befehl(Argument1);
+Befehl(Argument1, Argument2);
+
+// Hinter Funktionen kommt kein Strichpunkt, sondern geschweifte Klammern
+Funktion() {
+
+}
+
+// Bedingungen enden nicht mit Strichpunkt, sondern mit geschweiften Klammern
+if(Bedingung) {
+  // Was soll passieren?
+}
+
+// Schleifen sind fast wie Bedingungen ohne Strichpunkt
+while(Bedingung) {
+  // Solange ausführen, wie Bedingung wahr ist
+}
+
+while(i > 0) {
+  digitalWrite(13, HIGH);
+  delay(500);
+  i = i - 1;
+}
+```
+````
 
 ---
 ---
@@ -224,19 +399,25 @@ loop() {
 ```
 
 ---
+layout: statement
+---
+# Noch Fragen?
+
+---
 ---
 
 # Blinkende LED
 
-1. Öffnet das Projekt "blinkende_led"
-2. Schließt euren Arduino an
-3. Spielt das Programm auf euren Arduino
+1. Öffne das Projekt "blinkende_led"
+2. Schließ deinen Arduino an
+3. Spiele das Programm auf deinen Arduino
 
-## Fragen
+## Fragen (5 Minuten)
 - Was passiert?
-- Wofür brauchen wir "pinMode", was machen wir damit?
-- Was passiert, wenn wir 1000 durch z.B. 100 ersetzen?
-- Was machet digitalWrite und wie funktioniert das?
+- Wofür brauchst du "pinMode" und was machst du damit?
+- Was passiert, wenn du 1000 durch z.B. 100 ersetzt?
+- Was macht "digitalWrite" und wie funktioniert das?
+- Was ist der Unterschied zwischen HIGH und LOW?
   
 ---
 layout: image-left
@@ -248,7 +429,7 @@ background-size: 50em
 
 <v-clicks>
 
-- Warum brauchen wir einen Widerstand vor der LED?
+- Warum brauchst du einen Widerstand vor der LED?
 <v-click>&nbsp&nbsp&nbsp&nbsp=> Damit nicht zu viel Strom durch die LED fließt</v-click>
 - Ob der Widerstand bei + oder - eingebaut ist, ist egal
 - Auf die Polarität achten!
@@ -260,7 +441,7 @@ background-size: 50em
 ---
 ---
 
-# Wie weiß ich was der Arduino gerade macht?
+# Wie weißt du was der Arduino gerade macht?
 
 ```cpp
 // Wird beim Programmstart genau 1x ausgeführt
@@ -296,7 +477,7 @@ Es gibt Variablen mit unterschiedlichen Typen:
 | bool | Wahrheitswert |
 | int | Ganzzahl |
 | float | Kommazahl |
-| double | Kommazahl |
+| double | Kommazahl, aber größer |
 | char | Zeichen |
 | string | Zeichenkette |
 
@@ -306,7 +487,7 @@ Es gibt Variablen mit unterschiedlichen Typen:
 # Variablen verwenden
 
 - Variablen gelten nur da, wo ich sie anlege!
-  - Wenn ich eine Variable in **setup()** anlgege kann ich sie in **loop()** nicht verwenden
+  - Wenn ich eine Variable in **setup()** anlegen kann ich sie in **loop()** nicht verwenden
   - Wenn ich eine Variable ganz oben außerhalb von **setup()** und **loop()** anlege kann ich sie überall verwenden
 
 - Variablen anlegen: `Schlüsselwort NameDerVariable = Startwert;`
@@ -346,7 +527,7 @@ layout: two-cols-header
 
 ### Eigenes Blinkmuster
 
-- Lasst eure LEDs in einem eigenen Muster blinken
+- Lass deine LEDs in einem eigenen Muster blinken
 
 ::right::
 
@@ -386,7 +567,7 @@ Morse Alphabet:
 
 - Lauflicht soll schneller und langsamer werden
 - Beginnt bei 200ms
-- Endet bei 5sWas ist ein Arduino und was kann ich damit machen?
+- Endet bei 5s
 
 ---
 layout: full
