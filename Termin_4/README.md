@@ -53,7 +53,7 @@
    - Scannt nach I²C-Geräten und gibt gefundene Adressen aus
 
 3. **I2C-Adresse des Displays wird auf Seriellem Monitor ausgegeben**
-   - Jede*r notiert seine Adresse (0x27 oder 0x3F)
+   - Jede*r notiert seine Adresse (z.B. 0x27 oder 0x3F)
 
 4. **Theorieteil:**
    - Was ist I2C?
@@ -68,13 +68,24 @@
 5. **Jeder Teilnehmer*in schreibt seinen Namen auf das Display**
    - Code-Vorlage mit der richtigen I²C-Adresse
 
-## Erweiterung 1 - Stoppuhr
-
+## Erweiterung 1 - Reaktionstest
+ 
 **Wahl:** Option für Teilnehmer*innen, die früh fertig sind
-
-- Taster startet und stoppt den Timer
-- Anzeige der Zeit auf Display im Format `MM:SS`
-- Verwendet `millis()` für nicht-blockierende Zeitmessung
+ 
+**Ziel:** Das Display zeigt „Bereit..." – nach einer zufälligen Wartezeit
+erscheint „JETZT!". Der Spieler drückt so schnell wie möglich den Taster.
+Die Reaktionszeit wird auf dem Display angezeigt.
+ 
+**Schaltung:**
+- Taster an Pin 2 (mit GND)
+- LCD wie gehabt
+ 
+**Vorgehen:**
+1. `random(2000, 5000)` erzeugt eine zufällige Wartezeit → `delay()` wartet
+2. Reaktionszeit in 10ms-Schritten zählen bis Taster gedrückt wird
+3. Ergebnis auf Display anzeigen: `"Zeit: 0.43s"`
+ 
+**Lernziel:** `random()`, Zählschleife als Zeitmessung (bekannt aus Termin 2)
 
 ## Erweiterung 2 - Eieruhr
 
@@ -87,7 +98,7 @@
 
 **Hinweis:** Deutlich komplexer, kombiniert mehrere Konzepte
 
-## Challenge - Mini Klavier
+## Zusatzaufgabe - Mini Klavier
 
 **Ziel:** Mehrere Taster, jeder spielt eine andere Note. Der gespielte Ton wird auf dem Display angezeigt.
 
@@ -103,7 +114,7 @@
 - Jeder Taster spielt einen anderen Ton ab (C, D, E, F, G)
 - Abgespielter Ton wird auf Display angezeigt („Note: C")
 
-## Zusatzaufgabe - Laufschrift auf LCD
+## Challenge - Laufschrift auf LCD
 
 **Für sehr schnelle Teilnehmer*innen.**
 
