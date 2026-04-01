@@ -139,3 +139,11 @@ Schreibe eine vollständige Entwicklerdokumentation für dein Abschlussprojekt. 
 - Wer etwas erklären kann, hat es wirklich verstanden
 - Die Dokumentation kann bei der Präsentation als Spickzettel dienen
 - Für den Fortgeschrittenenkurs: Projekt kann sofort wieder aufgegriffen werden
+
+## Rückblick auf Wunschliste Tag 1
+
+- Welche Wünsche von Tag 1 hattest du?
+- Welche Wünsche haben wir erfüllt?
+- Welche Wünsche sind noch offen?
+
+Fortgeschrittenenkurs und/oder KidsLab
