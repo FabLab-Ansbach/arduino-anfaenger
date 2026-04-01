@@ -9,6 +9,10 @@
 | Hardware        | Funduino Experimentierkasten                                |
 | Software        | VS Code mit PlatformIO                                      |
 
+## Verzeichnisstruktur
+
+Für jeden Termin gibt es ein eigenes Verzeichnis, das jeweils die Präsentation (slides), Schaltpläne bzw. KiCAD/Fritzing Projekte (schaltplan) und Beispiel- bzw. Musterlösungs-Code beinhaltet. Alle weiteren Dokumente die zum Kurs gehören befinden sich im Verzeichnis docs. Dazu zählen z.B. das Code Guideline Sheet oder das vorbereitete Cheatsheet.
+
 ## Allgemeine Informationen
 
 Der Anfängerkurs soll Grundlagen im Umgang mit Elektronik vermitteln. Gleichzeitig sollen die Teilnehmer*innen einen Einstieg und einen Überblick in die Programmierung von Mikrocontrollern bekommen.
@@ -45,14 +49,17 @@ Am Ende des Kurses sollte jeder Teilnehmer*in:
 - Jeder Termin hat klare Ziele
   - Pflichtziel (Alle Teilnehmer*innen erreichen dieses Ziel) => Wird für den nächsten Termin vorausgesetzt
   - Erweiterung (Für Teilnehmer*innen die früh fertig sind) => Vertieft das aktuelle Thema ohne neuen Lerninhalt
-  - Challenge (Knifflige Aufgabe, die auch Denken über den Tellerrand hinaus erfordert)
   - Zusatzaufgabe (Für sehr schnelle Teilnehmer*innen, die auch die Challenge geschafft haben)
-- Am Ende jeden Termins gibt es eine kurze Feedback-Runde
+  - Challenge (Knifflige Aufgabe, die auch Denken über den Tellerrand hinaus erfordert)
+- Lösung der Pflichtaufgabe wird in der Gruppe besprochen, wenn alle fertig sind
+- Lösungen der Zusatz-/Challengeaufgaben in Gruppe besprechen, wenn alle auch damit fertig sind - ansonsten nicht!
+- Aufgabenstellungen für Zusatz-/Challengeaufgaben auf Karten zum "abholen" bei den Betreuern
+  - Dadurch auch Wissenskontrolle und Überprüfung der Lösung möglich
+  - Teilnehmer können unabhängig von der aktuellen Slide weiterarbeiten
+- Am Ende jeden Termins gibt es einen kurzen Rückblick
   - Was haben wir heute gelernt?
-- Am Ende jeden Termins soll jeder Teilnehmer*in auf einen Zettel schreiben:
-  - Eine Sache, die ich gelernt habe
-  - Eine Frage, die ich noch habe
-
+- Am Ende jeden Termins gibt es einen kurzen Rückblick
+  - Was haben wir heute gelernt?
 #### Herangehensweise der Wissensvermittlung
 
 - Erfolgserlebnisse als Antrieb
@@ -71,3 +78,8 @@ Am Ende des Kurses sollte jeder Teilnehmer*in:
   - Jede Variable hat einen sprechenden Namen => Nicht x sondern z.B. wartezeit
   - Jeder Block hat einen aussagekräftigen Kommentar
   - Jedes setup() beginnt mit Serial.begin(9600)
+- Spickzettel zum selbst ausfüllen
+  - Befehle und Beschreibungen
+  - Nur so viel wie man für die Aufgabe braucht
+  - In Eigenverantwortung jeder für sich
+- Fertigen Spickzettel für alle am Ende
