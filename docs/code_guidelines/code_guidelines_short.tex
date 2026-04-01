@@ -1,0 +1,197 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\input{../include/cheatsheet_template}
+
+% Dokumentenversion
+\newcommand\version{V1.0}
+
+% ════════════════════════════════════════════════════════════════════════
+\begin{document}
+\pagestyle{empty}
+
+% Header einfügen => Definition in cheatsheet.tex
+\cheatheader{../images/fablab-logo.png}{Arduino Anfängerkurs}{Regeln für sauberen Code}{}
+
+% Kurze Zusammenfassung der wichtigen Punkte
+\noindent
+\begin{tcolorbox}[
+  colback=arduinoBlue!12,
+  colframe=arduinoBlue,
+  coltitle=white,
+  fonttitle=\bfseries\fontsize{8}{9}\selectfont,
+  title={\faStar\enspace Kurzübersicht — alle Regeln auf einen Blick},
+  arc=3pt,
+  boxrule=1pt,
+  top=3pt, bottom=3pt, left=6pt, right=6pt,
+  toptitle=2pt, bottomtitle=2pt
+]
+  \fontsize{8.5}{10}\selectfont
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{}}
+    \faTag\ \textbf{Pins:}\ \texttt{const int PIN\_X = N;}
+    &
+    \faFont\ \textbf{Namen:}\ \texttt{wartezeit},\ \texttt{ledIstAn}
+    &
+    \faComment\ \textbf{Kommentare} vor jedem Block
+    &
+    \faTerminal\ \textbf{Serial:}\ \texttt{Serial.begin(9600)}
+    \texttt{+} \texttt{monitor\_speed = 9600}
+  \end{tabular*}
+\end{tcolorbox}
+
+\begin{multicols}{3}
+\raggedcolumns
+
+% --------
+% SPALTE 1
+% --------
+
+\sectiontitle{1}{Pins immer benennen}
+
+Keine nackten Zahlen im Code! Jeder Pin bekommt am Anfang einen \textbf{Namen als Variable}.
+
+\begin{badbox}
+\begin{lstlisting}
+pinMode(13, OUTPUT);
+digitalWrite(13, HIGH);
+\end{lstlisting}
+\end{badbox}
+
+\begin{goodbox}
+\begin{lstlisting}
+int LED_PIN = 13;
+
+pinMode(LED_PIN, OUTPUT);
+digitalWrite(LED_PIN, HIGH);
+\end{lstlisting}
+\end{goodbox}
+
+% --------
+\sectiontitle{2}{Sprechende Variablennamen}
+
+Variablennamen müssen erklären, was sie speichern.
+
+\begin{badbox}
+\begin{lstlisting}
+int x = 500;
+int h = 200;
+bool b = false;
+\end{lstlisting}
+\end{badbox}
+
+\begin{goodbox}
+\begin{lstlisting}
+int  wartezeit  = 500; // ms
+int  helligkeit = 200; // 0-255
+bool ledIstAn   = false;
+\end{lstlisting}
+\end{goodbox}
+
+\columnbreak
+
+% --------
+% SPALTE 2
+% --------
+
+\sectiontitle{3}{Blöcke kommentieren}
+
+Jeder Block bekommt einen Kommentar, der \textbf{kurz} erklärt \textbf{was} hier passiert.
+
+\begin{badbox}
+\begin{lstlisting}
+void loop() {
+  int zustand = digitalRead(PIN_TASTER);
+
+  if (zustand == HIGH) {
+    digitalWrite(PIN_LED, HIGH);
+  } else {
+    digitalWrite(PIN_LED, LOW);
+  }
+}
+\end{lstlisting}
+\end{badbox}
+
+\begin{goodbox}
+\begin{lstlisting}
+void loop() {
+  // Taster auslesen
+  int zustand = digitalRead(PIN_TASTER);
+
+  // LED bei gedrücktem Taster einschalten
+  // LED ausschalten, wenn Taster losgelassen wird^
+  if (zustand == HIGH) {
+    digitalWrite(PIN_LED, HIGH);
+  } else {
+    digitalWrite(PIN_LED, LOW);
+  }
+}
+\end{lstlisting}
+\end{goodbox}
+
+\begin{regelbox}{ruleAccent}{\faLightbulb\enspace Kommentarstile}
+  \fontsize{8}{9.5}\selectfont
+  \texttt{// Einzeilig — kurze Erklärung}\\
+  \texttt{/* Mehrzeilig für\\
+  \phantom{xx}längere Erklärungen */}\\
+  \texttt{int i = 0; // Am Zeilenende}
+\end{regelbox}
+
+\columnbreak
+
+% --------
+% SPALTE 3
+% --------
+
+\sectiontitle{4}{Serial Monitor einrichten}
+
+\lstinline|Serial.begin(9600)| gehört in \textbf{jedes}
+\lstinline|setup()| — auch wenn du ihn gerade nicht aktiv
+nutzt. So kannst du jederzeit mit \lstinline|Serial.println()|
+ausgeben lassen, was dein Arduino gerade macht.
+
+\begin{goodbox}
+\begin{lstlisting}
+int LED_PIN    = 13;
+int TASTER_PIN =  7;
+
+void setup() {
+  // Serial Monitor starten
+  Serial.begin(9600);
+
+  // Pins konfigurieren
+  pinMode(LED_PIN,    OUTPUT);
+  pinMode(TASTER_PIN, INPUT);
+
+  Serial.println("Gestartet!");
+}
+\end{lstlisting}
+\end{goodbox}
+
+\vspace{4pt}
+
+\begin{regelbox}{ruleAccent}{\faFile*[regular]\enspace platformio.ini}
+  \fontsize{8}{9.5}\selectfont
+  Die Baudrate im Code und in der Konfiguration \textbf{müssen übereinstimmen}!\\[3pt]
+\begin{lstlisting}[language={},
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily\fontsize{7.5}{9}\selectfont]
+[env:uno]
+platform       = atmelavr
+board          = uno
+framework      = arduino
+monitor_speed  = 9600
+\end{lstlisting}
+\end{regelbox}
+
+\end{multicols}
+
+% Footer
+\vfill
+\noindent
+{\color{arduinoBlue!40}\rule{\linewidth}{0.5pt}}\\[1pt]
+{\fontsize{7}{8}\selectfont\color{gray}
+ \textbf{Arduino Anfängerkurs} — Code Regeln
+ \hfill
+ \today\ -\ \version
+}
+
+\end{document}

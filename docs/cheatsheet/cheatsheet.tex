@@ -1,0 +1,237 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\input{../include/cheatsheet_template}
+
+\usepackage{dirtree}
+\usepackage{tabularray}
+\usepackage{fontawesome5}
+
+% Dokumentenversion
+\newcommand\version{V1.0}
+%
+% Zeilenhöhe festlegen
+\newcommand\columnheight{8mm}
+
+\definecolor{schreibflaeche}{gray}{0.95}
+
+% ════════════════════════════════════════════════════════════════════════
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+
+% Header einfügen => Definition in cheatsheet.tex
+\cheatheader{../images/fablab-logo.png}{Arduino Anfängerkurs}{Spickzettel}{\today\ -\ \version}
+
+\begin{multicols}{4}
+\raggedcolumns
+
+% Projektstruktur
+\begin{regelbox}{ruleAccent}{\faFolderOpen\enspace Projektstruktur}
+\dirtree{%
+.1 \textbf{MeinArduinoProjekt}/.
+.2 \textbf{src}/.
+.3 \texttt{main.cpp}.
+.2 \textbf{lib}/.
+.2 \textbf{include}/.
+.2 \textbf{.pio}/.
+.2 \texttt{platformio.ini}.
+}
+\begin{tblr}{l|X}
+{src} & {Programmcode} \\ \hline
+{lib} & {Bibliotheken} \\ \hline
+{include} & {eingebundener Code} \\ \hline
+{.pio} & {PlatformIO-Dateien} \\ \hline
+{platformio.ini} & {Einstellungsdatei} \\ \hline
+\end{tblr}
+
+\end{regelbox}
+
+% Grundstruktur
+\begin{regelbox}{ruleAccent2}{\faSitemap\enspace Grundstruktur des Programms}
+\begin{lstlisting}
+// Müssen wir bei PlatformIO immer am Anfang schreiben
+#include <Arduino.h>
+
+// Wird einmal beim Start ausgeführt
+void setup() {
+
+}
+
+// Wird immer wieder ausgeführt
+void loop() {
+
+}
+\end{lstlisting}
+\end{regelbox}
+
+% Serieller Monitor
+\begin{regelbox}{ruleAccent3}{\faTv\enspace Serieller Monitor}
+\begin{lstlisting}
+// Seriellen Monitor starten
+Serial.begin(9600);
+
+// Ohne Zeilenumbruch ausgeben
+Serial.print("Hallo");
+// Mit Zeilenumbruch ausgeben
+Serial.println("Welt");
+\end{lstlisting}
+\end{regelbox}
+
+% Serieller Monitor
+\begin{regelbox}{ruleAccent}{\faComment\enspace Kommentare}
+\begin{lstlisting}
+// Einfacher Kommentar
+
+/*
+Kommentar über
+mehrere Zeilen
+*/
+
+delay(1000); // Kommentar
+
+\end{lstlisting}
+\end{regelbox}
+
+% Variablen
+\begin{regelbox}{ruleAccent2}{\faCode\enspace Variablen}
+\begin{tblr}{l|X}
+bool & Wahrheitswert \\
+int & Ganzzahl \\
+float & Kommazahl (16Bit) \\
+double & Kommazahl (32Bit) \\
+char & Zeichen \\
+string & Zeichenkette \\
+\end{tblr}
+
+\begin{lstlisting}
+// Variable anlegen
+// Schlüsselwort Name = Wert;
+int GanzeZahl = 7;
+
+// Wert zuweisen
+GanzeZahl = 5;
+\end{lstlisting}
+
+\end{regelbox}
+
+% Bedingungen
+\begin{regelbox}{ruleAccent3}{\faRandom\enspace Bedingungen}
+
+Bedingung mit \textbf{if}. Danach in runden Klammern die Bedingung 
+und in geschweiften Klammern was passieren soll.
+
+\begin{lstlisting}
+if (Bedingung) {
+ // Passiert, wenn Bedingung WAHR
+} else {
+ // Passiert, wenn Bedingung FALSCH
+}
+\end{lstlisting}
+\end{regelbox}
+
+% Bedingungen
+\begin{regelbox}{ruleAccent4}{\faBalanceScale\enspace Vergleichsoperatoren}
+\begin{tblr}{l|X}
+Operator & Funktion \\
+== & ist gleich \\
+!= & ist ungleich \\
+< / > 	& kleiner / größer \\
+<= / >= & kleiner gleich / größer gleich \\
+! & nicht \\
+\end{tblr}
+\end{regelbox}
+
+% Digitale Pins
+\begin{regelbox}{ruleAccent}{\faBolt\enspace Digitale Pins}
+\begin{lstlisting}
+// Pin als Eingang festlegen
+pinMode(PIN_NUMMER, INPUT);
+
+// Pin als Eingang mit aktivem integrieren Pull-Up Widerstand
+pinMode(PIN_NUMMER, INPUT_PULLUP);
+
+// Pin als Ausgang festlegen
+pinMode(PIN_NUMMER, OUTPUT);
+
+// Zustand einlesen
+digitalRead(PIN_NUMMER);
+
+// Zustand ausgeben
+digitalWrite(PIN_NUMMER, HIGH);
+digitalWrite(PIN_NUMMER, LOW);
+\end{lstlisting}
+\end{regelbox}
+
+% Analoge Pins
+\begin{regelbox}{ruleAccent2}{\faWaveSquare\enspace Analoge Pins}
+
+Bei analogen Pins brauchen wir kein \textbf{pinMode}.
+
+\begin{lstlisting}
+// Spannung messen
+// 0V-5V => 0-1024
+analogRead(PIN_NUMMER);
+
+// Spannung ausgeben (PWM)
+// wert 0-255
+analogWrite(PIN_NUMMER, wert);
+\end{lstlisting}
+
+\textbf{analogWrite()} funktioniert nur bei Pins mit \textasciitilde Symbol!\\
+
+\end{regelbox}
+
+% Map-Funktion
+\begin{regelbox}{ruleAccent2}{\faArrowRight\enspace Map Funktion}
+
+Mit der map()-Funktion skalieren wir Werte.
+z.B. wird aus 0-100 Werte von 0-255 für PWM:
+
+\begin{lstlisting}
+map(wert, vonMin, vonMax, zuMin, zuMax);
+
+int helligkeit = map(helligkeit, 0, 100, 0, 255);
+\end{lstlisting}
+
+\end{regelbox}
+
+% Schleifen
+\begin{regelbox}{ruleAccent3}{\faSync\enspace for-Schleife}
+\begin{lstlisting}
+for (int i = 0; i < 10; i++) {
+	// Wird 10 mal ausgeführt...
+}
+\end{lstlisting}
+Drei Bestandteile:\\
+for (Initialisierung, Bedingung, Inkrement)
+\end{regelbox}
+
+\begin{regelbox}{ruleAccent4}{\faSync\enspace while-Schleife}
+\begin{lstlisting}
+while (Bedingung) {
+	// Wird ausgeführt solange Bedingung WAHR ist
+}
+\end{lstlisting}
+Bedingung wie bei if/else.
+\end{regelbox}
+
+% Bibliotheken
+\begin{regelbox}{ruleAccent}{\faArchive\enspace Bibliotheken}
+\begin{itemize}
+\item Einbinden in platformio.ini
+\begin{lstlisting}
+lib_deps =
+	Bibliothek
+	https://github.com/arduino/Bibliothek
+\end{lstlisting}
+\item Einbinden im Code
+\begin{lstlisting}
+#include "Bibliothek.h"
+\end{lstlisting}
+\end{itemize}
+\end{regelbox}
+
+\end{multicols}
+
+\end{document}

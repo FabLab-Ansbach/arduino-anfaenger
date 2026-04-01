@@ -1,0 +1,181 @@
+\title{Arduino Anfängerkurs - Abschlussprojekt}
+\author{FabLab Ansbach e.V.}
+\date{01. April 2026}
+
+\input{../include/template}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+\usepackage{amssymb}   % \square, \blacktriangleright
+
+% Arduino-Farben
+\definecolor{arduinoBlue}{HTML}{00979D}
+\definecolor{arduinoDark}{HTML}{005C5F}
+\definecolor{arduinoLight}{HTML}{E8F8F8}
+\definecolor{borderGray}{HTML}{CCCCCC}
+\definecolor{labelColor}{HTML}{444444}
+
+\setlength{\parindent}{0pt}
+
+% Abschnitt-Box (farbiger Rahmen + Titel)
+\newmdenv[
+  linecolor=arduinoBlue,
+  linewidth=1.2pt,
+  roundcorner=5pt,
+  backgroundcolor=white,
+  innertopmargin=7pt,
+  innerbottommargin=9pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  leftmargin=6pt,
+  rightmargin=6pt,
+  skipabove=5pt,
+  skipbelow=0pt
+]{sectionframe}
+
+% Abschnitt-Box (farbiger Rahmen + Titel)
+\newmdenv[
+  linecolor=arduinoBlue,
+  linewidth=1.2pt,
+  roundcorner=5pt,
+  backgroundcolor=white,
+  innertopmargin=7pt,
+  innerbottommargin=9pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=5pt,
+  skipbelow=0pt
+]{sectiontableframe}
+
+% Kopfzeilen-Box (hellblauer Hintergrund)
+\newmdenv[
+  linecolor=arduinoBlue,
+  linewidth=1.2pt,
+  roundcorner=5pt,
+  backgroundcolor=arduinoLight,
+  innertopmargin=7pt,
+  innerbottommargin=9pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=0pt,
+  skipbelow=0pt
+]{headerframe}
+
+% Einzelne Schreiblinie
+\newcommand{\writeline}{%
+  \vspace{6pt}%
+  \noindent\tikz\draw[arduinoBlue!45, line width=0.55pt] (0,0) -- (\linewidth,0);%
+  \vspace{1pt}%
+}
+
+% Nummerierte Schreiblinie
+\newcommand{\numberedline}[1]{%
+  \vspace{5pt}%
+  \noindent\textcolor{arduinoBlue}{\small\textbf{#1.}}\,%
+  \tikz\draw[arduinoBlue!45, line width=0.55pt] (0,0) -- (\linewidth-1.1cm,0);%
+  \vspace{1pt}%
+}
+
+% Checkbox-Schreiblinie
+\newcommand{\checkline}{%
+  \vspace{5pt}%
+  \noindent\textcolor{arduinoBlue}{$\square$}\,%
+  \tikz\draw[arduinoBlue!45, line width=0.55pt] (0,0) -- (\linewidth-0.9cm,0);%
+  \vspace{1pt}%
+}
+
+% Abschnittstitel
+\newcommand{\sectiontitle}[2]{%
+  {\color{arduinoDark}\textbf{\large #1\enspace #2}}\\[5pt]%
+}
+
+\begin{document}
+
+%% NAME & PROJEKTNAME (zweispaltig)
+\begin{tabularx}{\linewidth}{X@{\hspace{8pt}}X}
+  \begin{headerframe}
+    \sectiontitle{$\star$}{Mein Name}
+    \writeline\\
+    \writeline
+  \end{headerframe}
+  &
+  \begin{headerframe}
+    \sectiontitle{$\star$}{Mein Projektname}
+    \writeline\\
+    \writeline
+  \end{headerframe}
+\end{tabularx}
+
+\vspace{8pt}
+
+%% PROJEKTBESCHREIBUNG
+\begin{sectionframe}
+  \sectiontitle{$\blacktriangleright$}{Was macht mein Projekt? \normalfont\small\color{labelColor}(1\,--\,2 Sätze)}
+  \writeline\\
+  \writeline\\
+  \writeline
+\end{sectionframe}
+
+\vspace{2pt}
+
+%% SKIZZE
+\begin{sectionframe}
+  \sectiontitle{$\blacktriangleright$}{Skizze meiner Schaltung}
+  \vspace{2pt}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[borderGray, line width=0.8pt, dashed, rounded corners=4pt]
+        (0,0) rectangle (\linewidth-0.4cm, 8cm);
+      \node[text=borderGray, font=\small\itshape]
+        at ({(\linewidth-0.4cm)/2}, 4cm)
+        {Bauteile, Kabel und Arduino hier einzeichnen \ldots};
+    \end{tikzpicture}
+  \end{center}
+\end{sectionframe}
+
+\vspace{2pt}
+
+%% ERSTE SCHRITTE & PROBLEME (zweispaltig)
+\begin{tabularx}{\linewidth}{X@{\hspace{8pt}}X}
+  \begin{sectiontableframe}
+    \sectiontitle{$\blacktriangleright$}{Wie fange ich an?}
+    {\small\color{labelColor}Meine ersten Schritte:}
+    \newline\\
+    \numberedline{1}
+    \numberedline{2}
+    \numberedline{3}
+    \numberedline{4}
+    \numberedline{5}
+  \end{sectiontableframe}
+  &
+  \begin{sectiontableframe}
+    \sectiontitle{$\blacktriangleright$}{Mögliche Probleme}
+    {\small\color{labelColor}Was könnte schwierig werden?}
+    \newline\\
+    \checkline\\
+    \checkline\\
+    \checkline\\
+    \checkline\\
+    \checkline\\
+  \end{sectiontableframe}
+\end{tabularx}
+
+\vfill
+%% FUSSZEILE
+\begin{center}
+  \textcolor{arduinoBlue!60}{%
+    \small\rule{0.25\linewidth}{0.4pt}\quad
+    Viel Spa\ss{} beim T\"{u}fteln und Ausprobieren!
+    \quad\rule{0.25\linewidth}{0.4pt}%
+  }
+\end{center}
+
+\end{document}

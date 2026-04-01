@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[a4paper, left=20mm, right=20mm, top=30mm, bottom=30mm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {../images/} }
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{29.57358pt}
+
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\makeatletter
+\let\doctitle\@title
+\let\docauthor\@author
+\let\docdate\@date
+\def\@maketitle{
+\begin{center}
+\includegraphics[width = 40mm]{fablab-logo.png}\\[8ex]
+{\Huge \bfseries \@title }\\[4ex] 
+{\Large  \@author}\\[4ex]
+Stand: \@date\\[8ex]
+\end{center}}
+\makeatother
+
+\lhead{\includegraphics[scale=0.05]{fablab-logo.png}}
+\rhead{\doctitle}
+\lfoot{\docauthor}
+\rfoot{\docdate}

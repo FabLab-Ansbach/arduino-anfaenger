@@ -1,0 +1,59 @@
+\documentclass[a4paper,10pt,landscape]{article}
+\usepackage{tabularx}
+\usepackage{tabularray}
+\usepackage[table]{xcolor}
+
+\input{../include/cheatsheet_template}
+
+% Dokumentenversion
+\newcommand\version{V1.0}
+
+% Zeilenhöhe festlegen
+\newcommand\columnheight{8mm}
+
+\definecolor{schreibflaeche}{gray}{0.95}
+
+% ════════════════════════════════════════════════════════════════════════
+\begin{document}
+\pagestyle{empty}
+
+% Header einfügen => Definition in cheatsheet.tex
+\cheatheader{../images/fablab-logo.png}{Arduino Anfängerkurs}{Mein Spickzettel}{Name: \rule{6cm}{.4pt}}
+
+\noindent
+
+\begin{tblr}{
+width=\linewidth,
+row{1} = {valign=m, halign=c},
+colspec = {|X|X|X|},
+rows = {8mm},
+rowspec = {t{5mm}},
+hline{2} = {2pt, solid, headerBg},
+hlines = {-}{solid}
+}
+
+\faCode \textbf{ Befehl} & \faCogs \textbf{ Funktion} & \faLightbulb \textbf{ Hinweise} \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+
+\end{tblr}
+
+\vfill
+
+\end{document}
