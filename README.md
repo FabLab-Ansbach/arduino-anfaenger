@@ -11,7 +11,7 @@
 
 ## Verzeichnisstruktur
 
-Für jeden Termin gibt es ein eigenes Verzeichnis, das jeweils die Präsentation (slides), Schaltpläne bzw. KiCAD/Fritzing Projekte (schaltplan) und Beispiel- bzw. Musterlösungs-Code beinhaltet. Alle weiteren Dokumente die zum Kurs gehören befinden sich im Verzeichnis docs. Dazu zählen z.B. das Code Guideline Sheet oder das vorbereitete Cheatsheet.
+Für jeden Termin gibt es ein eigenes Verzeichnis, das jeweils die Präsentation (slides), Schaltpläne bzw. KiCAD/Fritzing Projekte (schematics) und Beispiel- bzw. Musterlösungs-Code beinhaltet. Alle weiteren Dokumente die zum Kurs gehören befinden sich im Verzeichnis docs. Dazu zählen z.B. das Code Guideline Sheet oder das vorbereitete Cheatsheet.
 
 ## Allgemeine Informationen
 
