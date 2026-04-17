@@ -1,4 +1,4 @@
-# Arduino Angängerkurs
+# Arduino Anfängerkurs
 
 |                 |                                                             |
 | ----------------| ----------------------------------------------------------- |
@@ -58,8 +58,7 @@ Am Ende des Kurses sollte jeder Teilnehmer*in:
   - Teilnehmer können unabhängig von der aktuellen Slide weiterarbeiten
 - Am Ende jeden Termins gibt es einen kurzen Rückblick
   - Was haben wir heute gelernt?
-- Am Ende jeden Termins gibt es einen kurzen Rückblick
-  - Was haben wir heute gelernt?
+
 #### Herangehensweise der Wissensvermittlung
 
 - Erfolgserlebnisse als Antrieb
