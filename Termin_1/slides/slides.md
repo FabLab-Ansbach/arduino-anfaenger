@@ -16,19 +16,53 @@ mdc: true
 layout: cover
 ---
 
+<!--
+### Auf jedem Platz sollte liegen:
+- Laptop + Maus
+- Arduino Box
+- eine Karteikarte bzw. Zettel min. Din A7
+- ein Stift
+- ausgedrucktes DIY-Cheatsheet + Code Guidelines
+- Projekt blinkende_led in home-Verzeichnis kopiert
+-->
+
 ---
 layout: image
 image: /img/fablab_logo.svg
 background-size: 30em
 ---
+
 # Das FabLab
+
+<!--
+# Begrüßung + Vorstellung
+- Teilnehmer zum Arduinokurs begrüßen
+- Kursleiter + Mitarbeiter stellen sich vor
+- FabLab vorstellen für alle die es nicht kennen
+-->
 
 ---
 layout: image
 image: /img/ANsWERK_Logo.png
 background-size: 30em
 ---
+
 # Das ANsWERK
+
+<!--
+### Answerk erwähnen
+
+# Wichtige Infos
+## Allgemeines
+- WC
+- Getränke kostenlos vom AnsWerk wer nichts dabei hat
+## Ablauf
+Jeder Termin besteht aus:
+- Rückblick
+- Input
+- Aufgaben
+- 30 Min. Mittagspause
+-->
 
 ---
 layout: image-left
@@ -56,6 +90,13 @@ backgroundSize: 30em
   <li v-click="6">Analoge Eingänge</li>
 </ul>
 
+<!--
+Teilnehmer fragen: "Wer kennt Arduino oder hat schon was damit gemacht?"
+Evtl. Teilnehmer erklären lassen
+
+=> Darauf hinweisen, dass ein Arduino KEIN Mikrocontroller ist, sondern das "Gesamtpaket"
+-->
+
 ---
 layout: image-right
 image: /img/Breadboard.png
@@ -76,6 +117,10 @@ background-size: 30em
   <li v-click="2">"Signalschienen" <br>=> Immer a-e und f-j verbunden</li>
 </ul>
 
+<!--
+Gleiches Vorgehen wie beim Arduino
+-->
+
 ---
 layout: image-left
 image: /img/led_aufbau.svg
@@ -86,10 +131,23 @@ background-size: 15em
 
 ## (Heft S. 13)
 
+<v-click>
+
 - Haben eine feste Polarität!
 - \+ (Anode) = längeres Beinchen
 - \- (Kathode) = kürzeres Beinchen oder beim "Kelch"
 - Merkhilfe: Mit dem längeren Beinchen kann ich leichter ein + machen als mit dem kürzeren
+
+</v-click>
+
+<!--
+# Bevor wir die Stichpunkte zeigen
+Jeder Teilnehmer*in nimmt sich eine LED aus dem Kasten und schaut sie sich an. Welche Besonderheiten erkennen wir?
+
+- Ein langes und ein kurzes Beinchen
+- Eine flache Seite an der LED
+- Im Inneren gibt es einen "Kegel"
+-->
 
 ---
 layout: image-right
@@ -108,16 +166,30 @@ background-size: 15em
 | Blau | 100 Ohm |
 | Infrarot | 100 Ohm |
 
+<!--
+Darauf hinweisen, dass die Tabelle auch im Heft steht
+
+Teilnehmer können die Werte auch später noch im Heft finden
+-->
+
 ---
 layout: default
 
 # Überblick über VS-Code mit PlatformIO
 ---
+
 # Anmeldung am Laptop
 
 - Benutzername: **user** | Passwort: **fablab**
 - Keine persönlichen Daten speichern
   - Keine Informationen über euch z.B. Namen, Alter, Adresse
+
+<!--
+Darauf hinweisen, dass jeder Teilnehmer für den Kurs immer den gleichen Rechner bekommt.
+
+Erst nach dem Kurs werden die Rechner wieder platt gemacht.
+Projekte können über USB-Sticks mitgenommen werden.
+-->
 
 ---
 
@@ -133,6 +205,15 @@ Nur für Linux:
 
 - Benutzer muss in der Gruppe dialout sein damit wir den Arduino programmieren können
 
+<!--
+## Installation für Zuhause
+
+Auf den Kurs Rechnern ist VS-Code mit PlatformIO bereits installiert.
+Die Folie ist der Vollständigkeit halber enthalten.
+
+**Teilnehmer darauf hinweisen, dass VS-Code schon installiert ist und sie es jetzt starten dürfen**
+-->
+
 ---
 layout: image
 image: /img/vs-code.png
@@ -140,6 +221,35 @@ background-size: 90%
 ---
 
 <Arrow x1="90" y1="245" x2="80" y2="245" color="orange" width=5 />
+
+<!--
+Hier sollte live gezeigt werden, wie man zu dem Zustand aus dem Bild kommt.
+
+1. VS-Code öffnen
+2. PlatformIO öffnen (Ameise in der Seitenleiste)
+3. Wenn sich PIO Home nicht geöffnet hat über das QUICK ACCESS Menü **Open** anklicken
+
+Wir öffnen jetzt am besten zusammen das Projekt blinkende_led im home Verzeichnis.  
+**Auf unseren Kurs Rechnern gibt es im Datei-Auswahl-Dialog in der linken Seite das Bookmark user.**
+-->
+
+---
+layout: image-left
+image: /img/PlatformIO_Menueleiste.png
+background-size: 30em
+---
+
+# PlatformIO - untere Menüleiste
+
+1. Projekt übersetzen
+2. Projekt an Arduino übertragen
+3. Seriellen Monitor öffnen
+4. Projekt auswählen (wenn mehrer Projekte geöffnet sind)
+5. Serielle Schnittstelle (wenn es funktionier auf auto lassen)
+
+<!--
+Bisher sollte noch kein Teilnehmer*in seinen Arduino angeschlossen haben!
+-->
 
 ---
 layout: two-cols-header
@@ -176,7 +286,10 @@ layout: two-cols-header
 
 ```
 
----
+<!--
+Wir schauen uns die Dateistruktur anhand des geöffneten Projekts an
+-->
+
 ---
 
 # Grundlagen Programmierung
@@ -379,7 +492,11 @@ while(i > 0) {
 ```
 ````
 
----
+<!--
+# Folie ist chronologisch und klickbar!
+Bei jedem Klick zeigt sich ein Beispiel und verschwindet mit dem nächsten Klick wieder.
+-->
+
 ---
 
 # Grundlagen Arduinoprogramm
@@ -397,6 +514,14 @@ loop() {
 
 }
 ```
+
+<!--
+1. Erklären, was die Funktionen besonders macht
+2. Teilnehmer*innen nach Anwendungszweck fragen
+3. Auflösung:
+  - In setup() machen wir initiale "Einstellungen" und setzen den Startpunkt für das Programm fest
+  - In loop() steht unsere eigentliche Programmlogik, die wir programmieren
+-->
 
 ---
 layout: statement
@@ -418,6 +543,10 @@ layout: statement
 - Was macht "digitalWrite" und wie funktioniert das?
 - Was ist der Unterschied zwischen HIGH und LOW?
 
+<!--
+Uhrzeit bis wann Ergebnisse besprochen werden anschreiben.
+-->
+
 ---
 layout: image-left
 image: /img/blinkende_led.png
@@ -436,6 +565,10 @@ background-size: 50em
 <br>Schaltung aufbauen und Programm anpassen -> Los Gehts!
 
 </v-clicks>
+
+<!--
+**Dass die LED mit PIN 12 verbunden ist ist absicht**
+-->
 
 ---
 ---
@@ -463,7 +596,6 @@ loop() {
 3. Ausgeben lassen, ob die LED gerade ein oder aus ist
 
 ---
----
 
 # Wir wollen die Zeiten ändern - Aber einfach!
 
@@ -479,6 +611,12 @@ Es gibt Variablen mit unterschiedlichen Typen:
 | double | Kommazahl, aber größer |
 | char | Zeichen |
 | string | Zeichenkette |
+
+<!--
+Teilnehmer*innen müssen sich nicht alle Typen merken.
+
+Wichtig sind für den Anfängerkurs vor allem int und bool, später auch noch float/double.
+-->
 
 ---
 ---
@@ -564,6 +702,17 @@ layout: two-cols-header
 }
 </style>
 
+<!--
+Darauf hinweisen, dass die Zeitabstände beim Morse-Code NICHT beliebig sind.
+
+Steht auf dem verlinkten Bild ganz oben!
+
+Ein kurzes blinken ist eine UNIT lang
+Ein langes blinken ist drei UNITs lang
+Abstand zwischen Symbolen ist eine UNIT lang
+Abstand zwischen Wörtern ist sieben UNITs lang
+-->
+
 ---
 ---
 
@@ -574,13 +723,18 @@ layout: two-cols-header
 - LEDs sollen nacheinander ein gehen und dann wieder aus
 
 ---
----
 
 # Zusatzaufgabe - Automatischer Blinker
 
 - Lauflicht soll schneller und langsamer werden
 - Beginnt bei 200ms
 - Endet bei 5s
+
+<!--
+# Diese Aufgabe greift auf den nächsten Termin vor!
+
+Lösung soll ohne Schleifen gemacht werden!
+-->
 
 ---
 layout: full
