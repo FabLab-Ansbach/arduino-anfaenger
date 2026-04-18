@@ -18,21 +18,21 @@ layout: cover
 
 ---
 layout: image
-image: ./img/fablab_logo.svg
+image: /img/fablab_logo.svg
 background-size: 30em
 ---
 # Das FabLab
 
 ---
 layout: image
-image: ./img/ANsWERK_Logo.png
+image: /img/ANsWERK_Logo.png
 background-size: 30em
 ---
 # Das ANsWERK
 
 ---
 layout: image-left
-image: ./img/Arduino_Uno.webp
+image: /img/Arduino_Uno.webp
 backgroundSize: 30em
 ---
 
@@ -58,7 +58,7 @@ backgroundSize: 30em
 
 ---
 layout: image-right
-image: ./img/Breadboard.png
+image: /img/Breadboard.png
 background-size: 30em
 ---
 
@@ -78,7 +78,7 @@ background-size: 30em
 
 ---
 layout: image-left
-image: ./img/led_aufbau.svg
+image: /img/led_aufbau.svg
 background-size: 15em
 ---
 
@@ -93,7 +93,7 @@ background-size: 15em
 
 ---
 layout: image-right
-image: ./img/led_aufbau.svg
+image: /img/led_aufbau.svg
 background-size: 15em
 ---
 
@@ -135,7 +135,7 @@ Nur für Linux:
 
 ---
 layout: image
-image: ./img/vs-code.png
+image: /img/vs-code.png
 background-size: 90%
 ---
 
@@ -404,7 +404,6 @@ layout: statement
 # Noch Fragen?
 
 ---
----
 
 # Blinkende LED
 
@@ -418,10 +417,10 @@ layout: statement
 - Was passiert, wenn du 1000 durch z.B. 100 ersetzt?
 - Was macht "digitalWrite" und wie funktioniert das?
 - Was ist der Unterschied zwischen HIGH und LOW?
-  
+
 ---
 layout: image-left
-image: ./img/blinkende_led.png
+image: /img/blinkende_led.png
 background-size: 50em
 ---
 
@@ -533,17 +532,31 @@ layout: two-cols-header
 
 ### Name in Morse-Code
 
-Morse Alphabet:
-<QRCode
-    :width="200"
-    :height="200"
+<div style="display: flex; flex-direction: column; gap: 4px;">
+  
+  <div style="margin: 0;">Morse-Alphabet:</div>
+  <QRCode
+    :width="150"
+    :height="150"
     type="svg"
     data="https://de.wikipedia.org/wiki/Morsecode#/media/Datei:International_Morse_Code.svg"
-    :margin="10"
-    :imageOptions="{ margin: 10 }"
+    :margin="0"
+    :imageOptions="{ margin: 0 }"
     :dotsOptions="{ type: 'extra-rounded', color: 'green' }"
-/>
+  />
 
+  <div style="margin-top: 8px;">Morse-Dekoder (https://sollozzo2.github.io/smorse):</div>
+  <QRCode
+    :width="150"
+    :height="150"
+    type="svg"
+    data="https://sollozzo2.github.io/smorse"
+    :margin="0"
+    :imageOptions="{ margin: 0 }"
+    :dotsOptions="{ type: 'extra-rounded', color: 'green' }"
+  />
+
+</div>
 
 <style>
 .two-cols-header {
