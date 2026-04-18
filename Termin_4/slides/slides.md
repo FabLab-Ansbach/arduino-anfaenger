@@ -43,7 +43,7 @@ Daumen **hoch** = analog / Daumen **runter** = digital
 
 ---
 layout: image-right
-image: ./img/piezo.webp
+image: /img/piezo.webp
 background-size: 20em
 ---
 
@@ -101,7 +101,7 @@ noTone(pin);
 
 ---
 layout: image-right
-image: ./img/piezo_schaltung.png 
+image: /img/piezo_schaltung.png 
 background-size: 30em
 ---
 
@@ -121,7 +121,7 @@ G - E - E - F - D - D
 
 ---
 layout: image-left
-image: ./img/lcd.webp
+image: /img/lcd.webp
 background-size: 30em
 ---
 

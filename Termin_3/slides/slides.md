@@ -196,7 +196,7 @@ Die drei Teile:
 
 ---
 layout: image-right
-image: ./img/Potentiometer.jpg
+image: /img/Potentiometer.jpg
 background-size: 25em
 ---
 
@@ -222,7 +222,7 @@ layout: statement
 
 ---
 layout: image-left
-image: ./img/led_poti.png
+image: /img/led_poti.png
 background-size: 30em
 ---
 
@@ -278,7 +278,7 @@ void loop() {
 
 ---
 layout: image-right
-image: ./img/Photoresistor.jpg
+image: /img/Photoresistor.jpg
 background-size: 20em
 ---
 
@@ -303,7 +303,7 @@ background-size: 20em
 
 ---
 layout: image-left
-image: ./img/ldr.png
+image: /img/ldr.png
 background-size: 30em
 ---
 

@@ -46,7 +46,7 @@ void loop() {
 
 ---
 layout: image-right
-image: ./img/Arduino-Taster-Button.jpg
+image: /img/Arduino-Taster-Button.jpg
 background-size: 30em
 ---
 
@@ -97,7 +97,7 @@ digitalRead(pin);             // Liefert HIGH oder LOW zurück
 
 ---
 layout: image-left
-image: ./img/pull_up_down.png
+image: /img/pull_up_down.png
 background-size: 30em
 ---
 
@@ -113,7 +113,7 @@ background-size: 30em
 
 ---
 layout: image-right
-image: ./img/pull_up.png
+image: /img/pull_up.png
 background-size: 20em
 ---
 
@@ -208,7 +208,7 @@ layout: statement
 
 ---
 layout: image-left
-image: ./img/led_taster.png
+image: /img/led_taster.png
 background-size: 30em
 ---
 
