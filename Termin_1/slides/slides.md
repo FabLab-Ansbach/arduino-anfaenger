@@ -67,6 +67,16 @@ Jeder Teilnehmer schreibt auf seine Karteikarte mindestens drei Sachen, die er s
 -->
 
 ---
+---
+
+# Was lernen wir heute?
+
+- Überblick Arduino, Breadboard und LED
+- Überblick Entwicklungsumgebung
+- Grundlagen Programmierung
+- LEDs blinken lassen
+
+---
 layout: image-left
 image: /img/Arduino_Uno.webp
 backgroundSize: 30em
