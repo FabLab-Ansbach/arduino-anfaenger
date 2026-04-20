@@ -16,7 +16,19 @@ mdc: true
 layout: cover
 ---
 
----
+<!--
+# Check-In Frage
+
+## witzig/kreativ
+- Wenn du eine Zeitmaschine hättest, wo würdest du hinreisen?
+- Was darf in deinem Kühlschrank nie leer werden?
+- Wenn du ein Tier wärst - welches?
+
+## klassisch
+- Worauf freust du dich heute?
+- Was willst du heute schaffen?
+-->
+
 ---
 
 # Rückblick - Was haben wir letztes Mal gemacht?
@@ -34,6 +46,14 @@ void loop() {
   delay(1000);
 }
 ```
+
+<!--
+# Folien sind klickbar!
+1. Zeile 2 -> pinMode statt pinmode
+2. Zeile 5 -> digitalWrite statt digitalwrite
+3. Zeile 6 -> fehlender Strichpunkt
+4. Zeile 3 -> fehlende }
+-->
 
 ---
 ---
@@ -60,11 +80,17 @@ background-size: 30em
   - HIGH = 5V
   - LOW = 0V (GND)
 - Taster zwischen Pin und GND
-- Interner Pull-Up Widerstand
+- Interner oder externer Pull-Up/Down Widerstand
 
 </v-clicks>
 
----
+<!--
+Im Kurs verwenden wir oft den internen Pull-Up.
+
+- Funktioniert NICHT an PIN 13 wegen der internen LED mit Vorwiderstand!
+- Für später: Im Datenblatt nachschauen, welche PINs interne Pull-Widerstände haben
+-->
+
 ---
 
 # pinMode(), digitalRead() und digitalWrite()
@@ -95,6 +121,14 @@ digitalRead(pin);             // Liefert HIGH oder LOW zurück
 
 </v-click>
 
+<!--
+# Folie ist klickbar!
+
+1. Was kennen wir bereits
+2. Was ist neu
+3. Hinweis
+-->
+
 ---
 layout: image-left
 image: /img/pull_up_down.png
@@ -110,6 +144,10 @@ background-size: 30em
 - Der Pull-Down Widerstand zieht den Pin auf LOW, wenn nichts angeschlossen ist
 
 </v-clicks>
+
+<!--
+Eventuell den Stromfluss einmal aufzeichnen und klar machen, wo der Unterschied liegt.
+-->
 
 ---
 layout: image-right
@@ -129,12 +167,16 @@ background-size: 20em
 
 </v-clicks>
 
----
+<!--
+# Folie ist klickbar!
+1. Physischer Aufbau
+2. Programmierung
+-->
+
 ---
 
 # Bedingungen mit if / else
 
-ve bele
 ````md magic-move {at: 1}
 
 ```cpp
@@ -183,6 +225,15 @@ Vergleichsoperatoren:
 
 </v-click>
 
+<!--
+# Folie ist klickbar!
+
+1. Theorie
+2. Beispiel
+3. Theorie
+4. Vergleichsoperatoren
+-->
+
 ---
 ---
 
@@ -220,9 +271,17 @@ background-size: 30em
 - LED + 220Ω Widerstand an Pin 11 und GND
 - Solange der Taster gedrückt ist → LED leuchtet
 <br><br>
-- **Schaltung aufbauen und Code ergänzen → Los gehts!**
+- **Schaltung aufbauen und Programm schreiben → Los gehts!**
 
 </v-clicks>
+
+<!--
+Konkrete Uhrzeit auf Folie schreiben!
+
+Je nach Fortschritt der Gruppe ca. 20 Min.
+
+=> Hilfestellung in Form von Codegerüst auf nächster Folie
+-->
 
 ---
 ---
@@ -255,6 +314,12 @@ layout: statement
 ---
 
 # Warum ist gedrückt = LOW <br> und nicht HIGH?
+
+<!--
+Es soll sichergestellt werden, dass alle Teilnehmer das Konzept von Pull-Up und Pull-Down verstanden haben.
+
+Ggf. noch fragen "**Was muss ich tun, damit gedrückt = HIGH ist?**"
+-->
 
 ---
 ---
@@ -298,7 +363,16 @@ layout: statement
 
 Damit ein Tastendruck erkannt wird muss der Taster für mindestens 100ms gedrückt sein!
 
----
+<!--
+Teilnehmer sollen jetzt selbstständig nach einer geeigneten Lösung suchen!
+
+Es gibt hier mehrere Lösungen!
+Die Lösung auf der nächsten Folie ist nicht die einzige richtige.
+
+### Konkrete Uhrzeit auf Folie schreiben
+Zeitansatz: ca. 15 min
+-->
+
 ---
 
 # Erweiterung 2 - Software-Entprellung - Lösungsvorschlag
@@ -319,6 +393,12 @@ if (digitalRead(PIN_TASTER) == LOW) {
 > Was wäre, wenn du `delay(100)` nicht verwenden kannst, weil der Arduino in dieser Zeit noch andere Dinge tun muss? Das lösen wir im Fortgeschrittenenkurs!
 
 </v-click>
+
+<!--
+Wenn es Teilnehmer gibt die schon die Funktion millis() kennen sollten wir auf den Fortgeschrittenenkurs verweisen und nichts vorgreifen.
+
+Das mag zwar im ersten Moment sinnvoll sein, allerdings läuft uns dann im Fortgeschrittenenkurs die Gruppe vom Wissensstand noch mehr auseinander!
+-->
 
 ---
 layout: two-cols-header
@@ -353,6 +433,12 @@ layout: two-cols-header
   column-gap: 20px;
 }
 </style>
+
+<!--
+## Hier brauchen wir keine konkreten Zeiten mehr
+
+Jeder Teilnehmer bearbeitet Zusatzaufgaben im eigenen Tempo
+-->
 
 ---
 layout: two-cols-header
