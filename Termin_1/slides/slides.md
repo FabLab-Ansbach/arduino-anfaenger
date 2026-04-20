@@ -62,6 +62,8 @@ Jeder Termin besteht aus:
 - Input
 - Aufgaben
 - 30 Min. Mittagspause
+## Umfrage
+Jeder Teilnehmer schreibt auf seine Karteikarte mindestens drei Sachen, die er sich vom Kurs wünscht und wie er auf den Kurs aufmerksam geworden ist.
 -->
 
 ---
