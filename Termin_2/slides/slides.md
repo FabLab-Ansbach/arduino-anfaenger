@@ -144,6 +144,8 @@ background-size: 30em
 - Der Pull-Up Widerstand zieht den Pin auf HIGH, wenn nichts angeschlossen ist
 - Der Pull-Down Widerstand zieht den Pin auf LOW, wenn nichts angeschlossen ist
 
+> Meistens Widerstände mit ca. 10 kΩ
+
 </v-clicks>
 
 <!--
