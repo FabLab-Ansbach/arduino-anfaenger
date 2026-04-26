@@ -108,7 +108,8 @@ pinMode(pin, OUTPUT);
 digitalWrite(pin, HIGH);  // oder LOW
 
 // Neu heute:
-pinMode(pin, INPUT_PULLUP);   // Pin als Eingang mit Pull-Up
+pinMode(pin, INPUT);          // Pin ist ein Eingang
+pinMode(pin, INPUT_PULLUP);   // Pin ist ein Eingang mit Pull-Up
 digitalRead(pin);             // Liefert HIGH oder LOW zurück
 ```
 ````
@@ -203,18 +204,49 @@ if (helligkeit > 500) {
 ```
 
 ```cpp
-if (Bedingung) {
-  // Wird ausgeführt, wenn Bedingung WAHR ist
+if (Bedingung1) {
+  // Wird ausgeführt, wenn Bedingung1 WAHR ist
+} else if (Bedingung2) {
+  // Wird ausgeführt, wenn Bedingung1 FALSCH, aber Bedingung2 WAHR ist
 } else {
   // Wird ausgeführt, wenn Bedingung FALSCH ist
 }
 ```
 
+```cpp
+if (Bedingung1) {
+  // Wird ausgeführt, wenn Bedingung1 WAHR ist
+} else if (Bedingung2) {
+  // Wird ausgeführt, wenn Bedingung1 FALSCH, aber Bedingung2 WAHR ist
+} else {
+  // Wird ausgeführt, wenn Bedingung FALSCH ist
+}
+
+if (helligkeit > 500) {
+  digitalWrite(LED_ROT, HIGH);
+} else if (helligkeit > 1000) {
+  digitalWrite(LED_GRUEN, HIGH);
+} else {
+  digitalWrite(LED_ROT, LOW);
+  digitalWrite(LED_GRUEN, LOW);
+}
+```
+
 ````
 
-<v-click at="3">
+<!--
+# Folie ist klickbar!
 
-Vergleichsoperatoren:
+1. if-else
+2. Beispiel
+3. else if
+4. Beispiel
+-->
+
+---
+---
+
+# Vergleichsoperatoren
 
 | Operator | Bedeutung |
 | -------- | --------- |
@@ -223,16 +255,122 @@ Vergleichsoperatoren:
 | `>` / `<` | größer / kleiner |
 | `>=` / `<=` | größer-gleich / kleiner-gleich |
 
+---
+---
+
+# Logische Verknüpfungen
+
+## Wir können Bedingungen auch verbinden!
+
+| Operator | Bedeutung |
+| -------- | --------- |
+| `&&` | UND |
+| `\|\|` | ODER | 
+| `!&` | UND NICHT |
+
+<v-click at="1">
+
+> Mit `!` verneinen wir
+
 </v-click>
 
-<!--
-# Folie ist klickbar!
+<v-click at="2">
 
-1. Theorie
-2. Beispiel
-3. Theorie
-4. Vergleichsoperatoren
--->
+```cpp
+if (!Bedingung) {
+  wert = !wert;   // Was passiert hier?
+}
+```
+
+</v-click>
+
+---
+---
+
+# Beispiele
+
+
+````md magic-move {at: 1}
+
+```cpp
+int TASTER_PIN = 11;
+bool taster_zustand = false;
+
+void setup() {
+  pinMode(TASTER_PIN, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  taster_zustand = digitalRead(TASTER_PIN);
+
+  if (taster_zustand == HIGH) {
+    Serial.println("Bedingung WAHR");  
+  }
+
+}
+```
+
+```cpp
+int TASTER_PIN = 11;
+bool taster_zustand = false;
+
+void setup() {
+  pinMode(TASTER_PIN, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  taster_zustand = digitalRead(TASTER_PIN);
+
+  if (taster_zustand != HIGH) {
+    Serial.println("Bedingung WAHR");  
+  }
+
+}
+```
+
+```cpp
+int TASTER_PIN = 11;
+bool taster_zustand = false;
+int helligkeit = 600;
+
+void setup() {
+  pinMode(TASTER_PIN, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  taster_zustand = digitalRead(TASTER_PIN);
+
+  if ((taster_zustand == HIGH) && (helligkeit > 500)) {
+    Serial.println("Bedingung WAHR");  
+  }
+  
+}
+```
+
+```cpp
+int TASTER1_PIN = 11;
+int TASTER2_PIN = 10;
+bool taster1_zustand = false;
+bool taster2_zustand = false;
+int helligkeit = 600;
+
+void setup() {
+  pinMode(TASTER1_PIN, INPUT);
+  pinMode(TASTER2_PIN, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  taster1_zustand = digitalRead(TASTER1_PIN);
+  taster2_zustand = digitalRead(TASTER2_PIN);
+
+  if ((taster1_zustand == HIGH) || (taster2_zustand == HIGH)) {
+    Serial.println("Bedingung WAHR");  
+  }
+  
+}
+```
+
+````
 
 ---
 ---
@@ -260,7 +398,7 @@ layout: statement
 ---
 layout: image-left
 image: /img/led_taster.png
-background-size: 30em
+background-size: 25em
 ---
 
 # LED mit Taster steuern
@@ -328,13 +466,22 @@ Ggf. noch fragen "**Was muss ich tun, damit gedrückt = HIGH ist?**"
 
 **Ziel:** Bei jedem Tastendruck wechselt die LED ihren Zustand (an → aus → an → aus)
 
-**Tipp:** Du solltest den Zustand der LED speichern
+<br>
+
+> - Speichere den Zustand der LED in einer Variable
+> - Denke daran, dass du mit `!` einen Wahrheitswert umdrehen kanns; auch von Variablen!
+
+<br>
+
+> Schaffst du es, zu erkennen, wann der Taster gedrückt wird?  
+> Wenn du den Taster gedrückt hältst, soll die LED **NICHT** blinken!
 
 ---
 ---
 
 # Erweiterung 1 - Toggle-Funktion - Lösung
 
+````md magic-move {lines: true}
 ```cpp
 bool ledZustand = false;   // Zustandsspeicher
 
@@ -346,6 +493,24 @@ void loop() {
   }
 }
 ```
+
+```cpp
+bool ledZustand = false;   // Zustandsspeicher
+bool tasterZustand = false;
+bool tasterZustandAlt = false;
+
+void loop() {
+  tasterZustand = digitalRead(PIN_TASTER);
+  if (tasterZustand != tasterZustandAlt) {
+    if (tasterZustand == HIGH) {
+      // Flanke erkannt!
+    }
+  }
+  tasterZustandAlt = tasterZustand;
+}
+```
+
+````
 
 <v-click>
 
