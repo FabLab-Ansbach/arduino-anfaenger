@@ -1,10 +1,11 @@
 #include <Arduino.h>
 
-int LED_PIN = 13;
+int LED_PIN = 11;
 int TASTER_PIN = 12;
 
-int tasterZustand;
-int ledZustand = LOW;
+bool tasterZustand;
+bool tasterZustandAlt;
+bool ledZustand = LOW;
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);           // LED_PIN als Ausgang
@@ -16,11 +17,15 @@ void setup() {
 }
 
 void loop() {
-  tasterZustand = digitalRead(TASTER_PIN); // Zustand vom Taster einlesen
+  tasterZustand = digitalRead(TASTER_PIN);  // Zustand vom Taster einlesen
 
-  if (tasterZustand == LOW) {         // Taster gedrückt
-    ledZustand = !ledZustand;
-    digitalWrite(LED_PIN, ledZustand);
+  if (tasterZustand != tasterZustandAlt) {  // Zustand hat sich geändert
+    if (tasterZustand == LOW) {             // Taster wurde gedrückt
+      ledZustand = !ledZustand;             // LED Zustand umschalten
+      digitalWrite(LED_PIN, ledZustand);    
+    }
   }
-  
+
+  tasterZustandAlt = tasterZustand;
+
 }

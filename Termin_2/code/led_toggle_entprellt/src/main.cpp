@@ -3,8 +3,9 @@
 int LED_PIN = 13;
 int TASTER_PIN = 12;
 
-int tasterZustand;
-int ledZustand = LOW;
+bool tasterZustand = LOW;
+bool tasterZustandAlt = LOW;
+bool ledZustand = LOW;
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);           // LED_PIN als Ausgang
@@ -16,15 +17,18 @@ void setup() {
 }
 
 void loop() {
-  tasterZustand = digitalRead(TASTER_PIN); // Zustand vom Taster einlesen
+  tasterZustand = digitalRead(TASTER_PIN);  // Zustand vom Taster einlesen
 
-  if (tasterZustand == LOW) {         // Taster gedrückt
-    delay(100);
-    tasterZustand = digitalRead(TASTER_PIN);  // Zustand vom Taster einlesen
-    if (tasterZustand == LOW) {       // Taster ist nach 100ms immernoch gedrückt
-      ledZustand = !ledZustand;
-      digitalWrite(LED_PIN, ledZustand);
+  if (tasterZustand != tasterZustandAlt) {  // Zustand hat sich geändert
+    if (tasterZustand == LOW) {             // Taster wurde gedrückt
+      delay(100);                 
+      if (tasterZustand == LOW) {           // Taster ist nach 100ms immernoch gedrückt
+        ledZustand = !ledZustand;           // LED Zustand umschalten
+        digitalWrite(LED_PIN, ledZustand);
+      }    
     }
   }
+
+  tasterZustandAlt = tasterZustand;
   
 }
