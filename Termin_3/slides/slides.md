@@ -16,6 +16,15 @@ mdc: true
 layout: cover
 ---
 
+<!--
+# Vorbereitungen
+
+- Stifte auf den Plätzen
+- Codegerüst für Poti-Aufgabe auf PCs kopieren
+- LDR Datenblatt ausdrucken und austeilen
+- Zusatzaufgaben ausgedruckt?
+-->
+
 ---
 ---
 
@@ -34,7 +43,7 @@ Ihr habt **2 Minuten** Zeit:
 - Analoge Signale lesen und ausgeben
 - PWM – Wie der Arduino "Spannung regeln" kann
 - Die `map()`-Funktion
-- `for`-Schleifen
+- Schleifen
 
 ---
 ---
@@ -48,7 +57,6 @@ Ihr habt **2 Minuten** Zeit:
 | Arduino lesen | `digitalRead()` → 0 oder 1 | `analogRead()` → 0 bis 1023 |
 | Arduino schreiben | `digitalWrite()` → HIGH/LOW | `analogWrite()` → 0 bis 255 |
 
----
 ---
 
 # analogRead() - Spannung messen
@@ -71,6 +79,10 @@ Serial.println(sensorwert);
 ```
 ````
 
+<!--
+# Folie ist klickbar
+-->
+
 ---
 ---
 
@@ -83,7 +95,6 @@ analogWrite(9, 255);    // volle Helligkeit
 analogWrite(9, 0);      // aus
 ```
 
----
 ---
 
 # PWM – Pulsweitenmodulation
@@ -114,7 +125,15 @@ Aus      (  0):                       = 0V
 
 </v-click>
 
----
+<!--
+# Folie ist klickbar
+1. Arduino arbeitet digital mit 0V und 5V
+2. Wir können schnell an/aus schalten
+3. Je länger an ist, desto heller wird die LED
+4. Beispiel
+5. Nur bestimmte PINS!
+-->
+
 ---
 
 # Das Problem: 0-1023 → 0-255
@@ -147,7 +166,15 @@ int helligkeit = map(sensorwert, 0, 1023, 0, 255);
 
 </v-click>
 
----
+<!--
+# Folie ist klickbar
+1. analogRead 0-1023
+2. analogWrite 0-255
+3. Umrechnung?!
+4. manuell
+5. map-Funktion
+-->
+
 ---
 
 # Die map()-Funktion
@@ -170,7 +197,66 @@ int helligkeit = map(sensorwert, 0, 1023, 255, 0);
 
 </v-click>
 
+<!--
+# Folie ist klickbar
+1. Theorie
+2. Beispiel
+-->
+
 ---
+---
+
+# Schleifen
+
+> Es gibt verschiedene Schleifen für unterschiedliche Anwendungen!
+
+<br>
+
+<v-clicks>
+
+- while-Schleife => Mache etwas solange wie eine Bedingung erfüllt ist
+- for-Schleife => Mache etwas genau X-mal
+
+</v-clicks>
+
+---
+
+# Die while-Schleife
+
+
+````md magic-move {lines: true}
+
+```cpp
+while (Bedingung) {
+  Serial.println("Hallo");
+}
+```
+
+```cpp
+while (Bedingung) {
+  Serial.println("Hallo");
+}
+
+while (helligkeit < 500) {
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+  digitalWrite(LED_PIN, LOW);
+  delay(500);
+}
+
+```
+
+````
+
+<!--
+# Folie ist klickbar
+1. Theorie
+2. Beispiel
+
+## Nach Auffälligkeit fragen
+=> Erwartung: Jemand sieht eine Ähnlichkeit mit if()
+-->
+
 ---
 
 # Die for-Schleife
@@ -194,6 +280,13 @@ Die drei Teile:
 
 </v-click>
 
+<!--
+# Folie ist klickbar
+
+1. Code
+2. Bestandteile erklärt
+-->
+
 ---
 layout: image-right
 image: /img/Potentiometer.jpg
@@ -213,6 +306,12 @@ background-size: 25em
 - Was passiert, wenn man am Knopf dreht?
 
 </v-clicks>
+
+<!--
+# Folie ist klickbar
+1. Anschlüsse erklären => Hier vielleicht den Aufbau malen und erklären!
+2. Frage was passiert, wenn man dreht
+-->
 
 ---
 layout: statement
@@ -236,7 +335,13 @@ background-size: 30em
 
 </v-clicks>
 
----
+<!--
+# Folie ist klickbar
+1. Poti aufbauen
+2. LED anschließen
+3. Schaltung aufbauen und Code ergänzen
+-->
+
 ---
 
 # Code-Gerüst: LED dimmen
@@ -266,6 +371,10 @@ void loop() {
   delay(50);
 }
 ```
+
+<!--
+**Code per ansible auf alle Rechner ins home-Verzeichnis kopieren!**
+-->
 
 ---
 ---
@@ -300,6 +409,22 @@ background-size: 20em
 > Genaue Werte findet ihr auf dem Info-Blatt!
 
 </v-click>
+
+<!--
+# Folie ist klickbar
+1. änderbarer Widerstand
+2. hell => kleiner Widerstand
+3. dunkel => hoher Widerstand
+4. Spannungsteiler
+-->
+
+---
+
+# Der Spannungsteiler
+
+<!--
+**Spannungsteiler mit Zeichnung erklären!**
+-->
 
 ---
 layout: image-left
@@ -393,17 +518,38 @@ void loop() {
 ```
 
 ---
+layout: two-cols-header
+---
+
+# Challenge - Einstellbares Nachtlicht
+
+::left::
+
+## Aufbau
+
+- LDR mit 10kΩ Widerstand an A0
+- Poti an A1
+- LED an PIN9
+
+::right::
+
+## Funktionen
+
+- LED wird nach Helligkeit gesteuert => Je dunkler es ist, desto heller wird die LED
+- Poti setzt Einschaltwert fest!
+
+---
 layout: statement
 ---
 
-# Challenge <br> - <br> Automatische Kalibrierung
+# Challenge+ <br> - <br> Automatische Kalibrierung
 
 Beim Start misst der Arduino 5 Sekunden lang die Helligkeit und setzt Minimal- und Maximalwert fest!
 
 ---
 ---
 
-# Challenge - Automatische Kalibrierung
+# Challenge+ - Automatische Kalibrierung
 
 ```cpp
 int minWert = 1023;   // Warum startest du hier mit 1023?
