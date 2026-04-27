@@ -670,7 +670,62 @@ Alle festen Zahlen durch Variablen ersetzen
 layout: two-cols-header
 ---
 
-# Erweiterungen
+# Zusatzaufgabe 1 - Ampelschaltung
+
+::left::
+
+### Aufbau
+
+- Rote, gelbe und grüne LED
+  - Rot => Pin 13
+  - Gelb => Pin 12
+  - Grün => Pin 11
+- Jede LED mit passendem Vorwiderstand
+- Zeiten wie bei echter Ampel
+
+::right::
+
+### Ablauf
+
+| Phase | Farbe | Zeit |
+| ----- | ----- | ---- |
+| Stop | Rot | 3000ms |
+| Achtung | Rot + Gelb | 1000ms |
+| Fahrt | Grün | 3000ms |
+| Bremsen | Gelb | 1000ms |
+
+<style>
+.two-cols-header {
+  column-gap: 20px;
+}
+</style>
+
+---
+---
+
+# Zusatzaufgabe 2 - SOS
+
+### Aufbau
+
+- LED => PIN 12
+- LED mit passendem Vorwiderstand
+
+### Aufgabe
+
+Lass die LED das SOS Signal blinken
+
+=> SOS (... --- ...)
+
+- Kurzes Blinken (.): 200ms an, 200ms aus
+- Langes Blinken (-): 600ms an, 200ms aus
+
+Zwischen zwei SOS-Signalen soll 2s Pause sein!
+
+---
+layout: two-cols-header
+---
+
+# Challenge
 
 ::left::
 
@@ -728,25 +783,16 @@ Abstand zwischen Wörtern ist sieben UNITs lang
 ---
 ---
 
-# Challenge - Lauflicht mit mehreren LEDs
+# Challenge + - Herzschlag
 
-- Zusätzliche LEDs einbauen
-- Jede LED braucht einen passenden Vorwiderstand
-- LEDs sollen nacheinander ein gehen und dann wieder aus
+### Aufbau
 
----
+- zwei LEDs mit Vorwiderständen
 
-# Zusatzaufgabe - Automatischer Blinker
+### Aufgabe
 
-- Lauflicht soll schneller und langsamer werden
-- Beginnt bei 200ms
-- Endet bei 5s
-
-<!--
-# Diese Aufgabe greift auf den nächsten Termin vor!
-
-Lösung soll ohne Schleifen gemacht werden!
--->
+- Eine LED blinkt wie ein Herzschlag
+- Die andere LED ist nur an, wenn das Herz "nicht" schlägt
 
 ---
 layout: full
