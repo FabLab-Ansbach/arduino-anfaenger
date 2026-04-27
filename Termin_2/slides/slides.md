@@ -571,95 +571,62 @@ Das mag zwar im ersten Moment sinnvoll sein, allerdings läuft uns dann im Fortg
 layout: two-cols-header
 ---
 
-# Zusatzaufgabe - Ampelschaltung
+# Zusatzaufgabe - Komplexere Logik
 
 ::left::
 
 ### Aufbau
 
-- Rote, gelbe und grüne LED
-  - Rot => Pin 13
-  - Gelb => Pin 12
-  - Grün => Pin 11
-- Jede LED mit passendem Vorwiderstand
-- Zeiten wie bei echter Ampel
+- Vier Taster mit **internem Pull-Up** (PIN 8, 9, 10, 11)
+- Eine LED (PIN 12)
 
 ::right::
 
-### Ablauf
+### Aufgabe
 
-| Phase | Farbe | Zeit |
-| ----- | ----- | ---- |
-| Stop | Rot | 3000ms |
-| Achtung | Rot + Gelb | 1000ms |
-| Fahrt | Grün | 3000ms |
-| Bremsen | Gelb | 1000ms |
-
-<style>
-.two-cols-header {
-  column-gap: 20px;
-}
-</style>
-
-<!--
-## Hier brauchen wir keine konkreten Zeiten mehr
-
-Jeder Teilnehmer bearbeitet Zusatzaufgaben im eigenen Tempo
--->
+- Es gibt drei Bedingungen, wann die LED leuchten soll
+  - Taster1 **UND** Taster2 gedrückt
+  - Taster3 **ODER** Taster4 gedrückt
+- Denke dir noch mehr Logiken aus!
+  - z.B. maximal ein Taster gedrückt
 
 ---
 layout: two-cols-header
 ---
 
-# Zusatzaufgabe - Fußgängerampel
+# Challenge - getaktetes Lauflicht
 
 ::left::
 
 ### Aufbau
 
-- Zusätzlich rote und grüne LED für Fußgänger
-  - Rot => Pin 10
-  - Grün => Pin 9
-- Taster für Fußgänger
-  - Pin 8
+- fünf LEDs mit passenden Vorwiderständen
+- Taster mit **internem Pull-Up**
 
 ::right::
 
-### Ablauf
+### Aufgabe
 
-Zusätzlich zur normalen Ampel:
-
-- Wenn der Taster gedrückt wurde läuft die Ampel normal weiter, bis das nächste mal rot kommt
-- Beide Ampeln müssen für 500ms rot sein
-- Fußgängerampel für 3000ms grün
-- Beide Ampeln für 500ms rot
-- Auto-Ampel läuft bei gelb weiter
-
-<style>
-.two-cols-header {
-  column-gap: 20px;
-}
-</style>
+- Es soll immer nur eine LED leuchten
+- Bei jedem Tastendruck leuchtet die nächste LED
+- Wenn die letzte LED leuchtet soll als nächstes wieder die erste leuchten
 
 ---
+---
 
-# Challenge - Türklingel mit Bestätigung
+# Challeng+ - Lauflicht mit Funktionsumschaltung
 
-> Bei dieser Aufgabe musst du wirklich knobeln - Also lass dich nicht unterkriegen!
+### Änderungen
 
-<br>
+- Zusätzlicher Taster
+- Zusätzlicher Taster schaltet Funktionen um
 
-**Ziel:** Du simulierst eine Türklingel mit Türöffner
+#### Mögliche Funktionen
 
-- Wird Taster 1 (Klingel) gedrückt, blinkt eine rote LED langsam
-- Wird Taster 2 (Türöffner) gedrückt, geht die rote LED aus und eine grüne LED blinkt kurz
-- Wird Taster 2 nicht innerhalb von ca. 5 Sekunden gedrückt, blinkt die rote LED schneller
-
-**Aufgaben:**
-
-- Zeichne einen Schaltplan auf Papier
-- Baue die Schaltung auf deinem Breadboard auf
-- Programmiere die Logik
+1. Immer nur eine LED ist ein => gehen nacheinander ein/aus
+   1. Wenn die letzte LED ein ist fängt es nicht von vorne an, sondern geht rückwärts
+2. Es kommt immer eine LED dazu => Wenn alle ein sind gehen alle wieder aus
+   1. Wenn alle LEDs ein sind gehen sie nacheinander wieder aus
 
 ---
 layout: full
