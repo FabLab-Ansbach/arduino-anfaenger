@@ -16,6 +16,15 @@ mdc: true
 layout: cover
 ---
 
+<!--
+# Vorbereitung
+
+- **melodie_vorlage** und **i2c_scanner** auf Laptops kopieren
+`ansible all -i inventory.yml --vault-password-file=PASSWORDFILE -m copy -a "src=QUELLE; dest=ZIEL"`
+- Stifte auf den Plätzen
+- Zusatzaufgaben ausgedruckt
+-->
+
 ---
 ---
 
@@ -60,7 +69,15 @@ background-size: 20em
 
 </v-clicks>
 
----
+<!--
+# Folie ist klickbar
+
+- grundlegende Funktion
+- passiver Buzzer
+- aktiver Buzzer
+- Anschluss
+-->
+
 ---
 
 # tone() und noTone()
@@ -86,6 +103,13 @@ noTone(pin);
 ```
 ````
 
+<!--
+# Folie ist klickbar
+
+- tone
+- noTone
+-->
+
 ---
 ---
 
@@ -102,7 +126,7 @@ noTone(pin);
 
 ---
 layout: image-right
-image: /img/piezo_schaltung.png 
+image: /img/piezo_schaltung.png
 background-size: 30em
 ---
 
@@ -113,12 +137,19 @@ Aufgabe: Spielt die ersten Töne von **Hänschen klein** ab, wenn ein Taster ged
 ```
 G - E - E - F - D - D
 ```
+<br>
+
+> **Benutzt das Vorlageprojekt melodie_vorlage**
 
 <br>
 
 **Experimentiert:**
 - Kannst du die nächsten Töne selbst ergänzen?
 - Was passiert, wenn du die Dauern veränderst?
+
+<!--
+# Vorlage mit Ansible auf Rechner kopieren
+-->
 
 ---
 layout: image-left
@@ -141,7 +172,13 @@ background-size: 30em
 
 </v-clicks>
 
----
+<!--
+# Folie ist klickbar
+
+- Zeilen/Spalten
+- Anschluss
+-->
+
 ---
 
 # Schritt 1 - I²C-Scanner übertragen
@@ -151,7 +188,10 @@ background-size: 30em
 3. Seriellen Monitor öffnen
 4. **Schreib die Adresse von deinem Display auf!** (z.B. 0x27 oder 0x3F)
 
----
+<!--
+# Projekt mit anisble auf Laptops kopieren
+-->
+
 ---
 
 # Was ist I²C?
@@ -168,6 +208,16 @@ background-size: 30em
 - Deshalb hat jedes Display eine andere Adresse – daher der Scanner!
 
 </v-clicks>
+
+<!--
+# Folie ist klickbar
+
+- Bedeutung
+- Zweidraht
+- Verbindung miteinander
+- Wire Bibliothek
+- eindeutige Adressen!
+-->
 
 ---
 ---
