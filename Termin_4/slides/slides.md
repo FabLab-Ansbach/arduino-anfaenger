@@ -54,8 +54,9 @@ background-size: 20em
 <v-clicks>
 
 - Eine Membran schwingt durch elektrische Impulse
-- **Passiver Buzzer:** Braucht eine Frequenz von außen
-- Positiver Pin → Pin 8, Negativer Pin → GND
+- **Passiver Buzzer (mit grüner Platine):** Braucht eine Frequenz von außen
+- **Aktiver Buzzer (unten schwarz ohne Platine):** Piept, wenn er mit 5V versorgt wird von alleine
+- Positiver Pin → z.B. Pin 8, Negativer Pin → GND
 
 </v-clicks>
 
@@ -135,8 +136,8 @@ background-size: 30em
 - Anschluss über nur **4 Drähte** dank I²C:
   - VCC → 5V
   - GND → GND
-  - SDA → A4
-  - SCL → A5
+  - SDA → SDA
+  - SCL → SCL
 
 </v-clicks>
 
@@ -145,7 +146,7 @@ background-size: 30em
 
 # Schritt 1 - I²C-Scanner übertragen
 
-1. Schaltung aufbauen (VCC, GND, SDA → A4, SCL → A5)
+1. Schaltung aufbauen (VCC → 5V, GND → GND, SDA → SDA, SCL → SCL)
 2. Das vorbereitete **I²C-Scanner-Projekt** übertragen
 3. Seriellen Monitor öffnen
 4. **Schreib die Adresse von deinem Display auf!** (z.B. 0x27 oder 0x3F)
@@ -242,42 +243,6 @@ Trage deine **eigene I²C-Adresse** ein und schreibe deinen Namen auf das Displa
 </v-click>
 
 ---
----
-
-# Erweiterung 1 - Reaktionstest
-
-#### Aufgabe:
-
-<br>
-
-1. Display zeigt "Bereit..." an
-2. Nach einer zufälligen Zeit erscheint "JETZT!"
-3. Der Spieler muss so schnell wie möglich den Taster (**Pin 10**) drücken
-4. Danach wird die gemessene Zeit angezeigt
-5. Wird der Taster (**Pin 10**) wieder gedrückt beginnt das Spiel von vorne
-
-#### Hinweise:
-
-- verwende `randomSeed(analogRead(A0));` in deiner Setup-Funktion
-- `random(min, max);` gibt dir eine zufällige Zahl zwischen min und max zurück
-
----
----
-
-# Erweiterung 2 - Eieruhr
-
-**Aufbau:**
-
-- Zwei Taster: Minuten hoch (**PIN 10**) / Minuten runter (**PIN 11**)
-- Ein Taster: Timer starten/stumm schalten (**PIN 12**)
-- Buzzer (**PIN 9**) für Alarm
-- LCD für Anzeige
-
-<br>
-
-> **Diese Aufgabe kombiniert alles, was du bisher gelernt habt – lass dich nicht unterkriegen!**
-
----
 
 # Zusatzaufgabe - Mini Klavier
 
@@ -294,6 +259,28 @@ Trage deine **eigene I²C-Adresse** ein und schreibe deinen Namen auf das Displa
 - Taster 1 → Note C erklingt, Display zeigt `Note: C`
 - Taster 2 → Note D erklingt, Display zeigt `Note: D`
 - usw. für E, F, G
+
+---
+layout: two-cols-header
+---
+
+# Erweiterung - Melodie-Wähler
+
+::left::
+
+## Aufbau
+
+- Zwei Taster (PIN 11, 12)
+- Buzzer (PIN 10)
+- LCD
+
+::right::
+
+## Ziel
+
+- Taster 1 steuert die Auswahl der Melodie
+- Taster 2 startet die Melodie
+- LCD zeigt ausgewählte Melodie an
 
 ---
 layout: statement
